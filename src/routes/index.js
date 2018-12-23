@@ -35,7 +35,7 @@ const routes = {
     const route = await next();
 
     // Provide default values for title, description etc.
-    route.title = `${route.title || 'cryptocraps'}`;
+    route.title = `${route.title || 'Pelvan'}`;
     route.description = route.description || '';
 
     return route;

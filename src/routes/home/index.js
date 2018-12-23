@@ -1,3 +1,4 @@
+/* eslint-disable no-empty-pattern */
 import React from 'react';
 import Home from './Home';
 import { Layout } from '../../components/Layout';
@@ -16,7 +17,7 @@ async function action(
   // if (!data || !data.news) throw new Error('Failed to load the news feed.');
   return {
     chunks: ['home'],
-    title: 'CryptoCraps',
+    title: 'Pelvan',
     component: (
       <Layout>
         <Home />

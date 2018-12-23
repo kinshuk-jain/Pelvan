@@ -19,7 +19,7 @@ class FooterComponent extends React.Component {
     return (
       <div className={s.root}>
         <div className={s.container}>
-          <span className={s.text}>© CryptoCraps</span>
+          <span className={s.text}>© Pelvan</span>
           {links.map((link, i) => (
             <span key={i}>
               <span className={s.spacer}>·</span>

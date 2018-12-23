@@ -15,7 +15,7 @@ class Header extends Component {
       <div className={s.header}>
         <MenuBar />
         <Link className={s.logoInfo} target="_self" to="/">
-          CryptoCraps
+          Pelvan
         </Link>
         <SearchBar />
         <ActionContainer />

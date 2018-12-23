@@ -1,5 +1,5 @@
 {
-  "name": "cryptocraps",
+  "name": "pelvan",
   "version": "0.0.0",
   "private": true,
   "engines": {
@@ -8,6 +8,7 @@
   },
   "browserslist": [">1%", "last 4 versions", "Firefox ESR", "not ie < 9"],
   "dependencies": {
+    "@material-ui/core": "3.7.1",
     "babel-polyfill": "7.0.0-beta.3",
     "body-parser": "1.18.2",
     "classnames": "2.2.5",
@@ -23,9 +24,8 @@
     "pretty-error": "2.1.1",
     "prop-types": "15.5.10",
     "query-string": "5.0.0",
-    "react": "16.0.0",
-    "react-dev-utils": "4.1.0",
-    "react-dom": "16.0.0",
+    "react": "16.4.2",
+    "react-dom": "16.4.2",
     "react-redux": "5.0.5",
     "redux": "3.7.1",
     "redux-logger": "3.0.6",
@@ -37,7 +37,6 @@
   },
   "devDependencies": {
     "assets-webpack-plugin": "3.5.1",
-    "babel-runtime": "6.26.0",
     "autoprefixer": "7.1.6",
     "babel-core": "7.0.0-beta.3",
     "babel-eslint": "8.0.1",
@@ -51,6 +50,7 @@
     "babel-preset-flow": "6.23.0",
     "babel-preset-react": "7.0.0-beta.3",
     "babel-preset-stage-2": "7.0.0-beta.3",
+    "babel-runtime": "6.26.0",
     "browser-sync": "2.18.13",
     "chokidar": "1.7.0",
     "core-js": "2.5.1",
@@ -98,6 +98,7 @@
     "postcss-selector-not": "3.0.1",
     "prettier": "1.7.4",
     "raw-loader": "0.5.1",
+    "react-dev-utils": "4.1.0",
     "react-deep-force-update": "2.0.1",
     "react-error-overlay": "2.0.2",
     "react-hot-loader": "3.0.0-beta.7",

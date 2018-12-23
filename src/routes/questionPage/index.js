@@ -7,7 +7,7 @@ import QuestionPage from './QuestionPage';
 async function action({ params }) {
   return {
     chunks: ['questionPage'],
-    title: 'CryptoCraps',
+    title: 'Pelvan',
     component: (
       <Layout>
         <QuestionPage
