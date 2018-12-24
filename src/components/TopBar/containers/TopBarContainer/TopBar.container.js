@@ -24,7 +24,7 @@ class TopBarContainer extends React.Component {
 }
 
 export const TopBar = connect(
-  ({ hideTopBar }) => ({
+  ({ hideTopBar = true }) => ({
     hideTopBar,
   }),
   dispatch => ({

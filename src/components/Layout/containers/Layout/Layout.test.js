@@ -18,7 +18,14 @@ describe('Layout', () => {
     const store = mockStore(initialState);
     const wrapper = renderer
       .create(
-        <App context={{ insertCss: () => {}, store }}>
+        <App
+          context={{
+            insertCss: () => {},
+            insertFontCss: () => {},
+            fetch: () => {},
+            store,
+          }}
+        >
           <Layout>
             <div className="child" />
           </Layout>
