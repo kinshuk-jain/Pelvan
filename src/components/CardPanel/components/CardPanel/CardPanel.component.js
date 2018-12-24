@@ -4,22 +4,16 @@ import withStyles from 'isomorphic-style-loader/lib/withStyles';
 import classNames from 'classnames';
 import s from './CardPanel.component.css';
 
-import { FlagOption } from '../../../CardPanel';
 import { Link } from '../../../Link';
 
 // TODO - chhange history.push to correct route
 const Header = props => {
-  const { className, title, hasPin, link } = props;
+  const { className, title, link } = props;
   return (
     <div className={classNames(s.titleContainer, className)}>
       <Link className={s.title} to={link}>
         {title}
       </Link>
-      {hasPin && (
-        <div className={s.flagpin}>
-          <FlagOption link={link} title={title} />
-        </div>
-      )}
     </div>
   );
 };
@@ -27,13 +21,11 @@ const Header = props => {
 Header.propTypes = {
   className: PropTypes.string,
   title: PropTypes.string.isRequired,
-  hasPin: PropTypes.bool,
   link: PropTypes.string,
 };
 
 Header.defaultProps = {
   className: '',
-  hasPin: false,
   link: '',
 };
 

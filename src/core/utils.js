@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-expressions */
 
-import _ from 'lodash';
+import throttle from 'lodash/throttle';
 
 export const disableBodyScrolling = (condition, avoidFixed) => {
   if (condition) {
@@ -38,7 +38,7 @@ export function addRemoveScrollEventListener(fn, remove = false) {
     /* do nothing */
   }
   // attach event listener
-  const scrollCB = _.throttle(fn, 200);
+  const scrollCB = throttle(fn, 200);
   const options = supportPassive ? { capture: true, passive: true } : true;
   remove
     ? window.removeEventListener('scroll', scrollCB, options)

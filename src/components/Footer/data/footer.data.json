@@ -6,11 +6,7 @@
     },
     {
       "name": "About",
-      "href": "/admin"
-    },
-    {
-      "name": "Ask Question",
-      "href": "/privacy"
+      "href": "/about"
     }
   ],
   "footerText": "Full bakar SEO wali"

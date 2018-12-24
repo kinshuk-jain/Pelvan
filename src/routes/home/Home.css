@@ -1,38 +1,6 @@
 @import '../../components/variables.css';
 
-.root {
-  padding-top: 15px;
-}
-
 .container {
   margin: 0 auto;
   padding: 0 0 40px;
-}
-
-.left,
-.mid,
-.right {
-  display: inline-block;
-  width: 20%;
-  vertical-align: top;
-}
-
-.mid {
-  width: 56%;
-  padding-left: 10px;
-  box-sizing: border-box;
-}
-
-.right {
-  box-sizing: border-box;
-  width: 24%;
-  padding-left: 10px;
-}
-
-.smallLeft {
-  width: 8%;
-}
-
-.bigMid {
-  width: 68%;
 }

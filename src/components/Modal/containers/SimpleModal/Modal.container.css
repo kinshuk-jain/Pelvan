@@ -36,6 +36,7 @@
 
 .crossInfo {
   position: absolute;
+  color: var(--Trout);
   cursor: pointer;
   right: 0.8rem;
   top: 0;

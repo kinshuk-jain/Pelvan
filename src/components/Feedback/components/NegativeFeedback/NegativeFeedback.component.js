@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import withStyles from 'isomorphic-style-loader/lib/withStyles';
 import s from './NegativeFeedback.component.css';
 import { ALLOWED_COMMENT_LENGTH } from '../../Feedback.constants';
-import Modal from '../../../Modal';
+import { Modal } from '../../../Modal';
 
 const FormTitle = () => (
   <div className={s.modalTitle}>

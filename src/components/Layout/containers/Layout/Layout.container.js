@@ -14,7 +14,7 @@ class LayoutContainer extends React.Component {
   };
 
   static defaultProps = {
-    hideTopBar: false,
+    hideTopBar: true,
   };
 
   state = {

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import withStyles from 'isomorphic-style-loader/lib/withStyles';
 import s from './PositiveFeedback.component.css';
 
-import Modal from '../../../Modal';
+import { Modal } from '../../../Modal';
 
 const PositiveFeedback = props => {
   const { modalCloseFn } = props;

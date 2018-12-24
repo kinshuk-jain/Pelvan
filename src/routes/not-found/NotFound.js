@@ -6,7 +6,6 @@ import s from './NotFound.css';
 import history from '../../history';
 
 import { Footer } from '../../components/Footer';
-import { PopularEvents } from '../../components/PopularEvents';
 import { Link } from '../../components/Link';
 
 class NotFound extends React.Component {
@@ -29,9 +28,6 @@ class NotFound extends React.Component {
           <Link to="" onClick={() => history.go(-1)}>
             Go Back
           </Link>
-        </div>
-        <div className={s.containerRight}>
-          <PopularEvents />
         </div>
         <Footer />
       </div>

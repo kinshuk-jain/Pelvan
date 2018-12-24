@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import withStyles from 'isomorphic-style-loader/lib/withStyles';
 import s from './Footer.component.css';
 import { Link } from '../../../Link';
+import { FeedbackBar } from '../../../Feedback';
 
 class FooterComponent extends React.Component {
   static propTypes = {
@@ -18,6 +19,7 @@ class FooterComponent extends React.Component {
     const { links = [], footerText = '' } = this.props;
     return (
       <div className={s.root}>
+        <FeedbackBar />
         <div className={s.container}>
           <span className={s.text}>© Pelvan</span>
           {links.map((link, i) => (

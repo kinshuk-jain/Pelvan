@@ -9,20 +9,14 @@ import normalizeCss from 'normalize.css';
 import s from './Page.component.css';
 
 import { scrollToTop } from '../../../../core/utils';
-import { Header } from '../../../Header';
 import { TopBar } from '../../../TopBar';
 
 const Page = props => {
   const { hideTopBar, children, showScrollToTop } = props;
   return (
     <div className={s.pageContainer}>
-      <div className={s.topBarContainer}>
-        <TopBar />
-        <Header />
-      </div>
-      <div className={cx(s.child, { [s.addTopBarHeight]: !hideTopBar })}>
-        {children}
-      </div>
+      <TopBar />
+      <div className={cx({ [s.addTopBarHeight]: !hideTopBar })}>{children}</div>
       {showScrollToTop && (
         <div
           className={s.scrollToTop}

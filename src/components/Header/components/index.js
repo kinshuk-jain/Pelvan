@@ -1,4 +1,3 @@
-import HeaderActions from './Actions/Actions.component';
-import ActionHelper from './ActionHelper/ActionHelper.component';
+import HeaderComponent from './HeaderComponent/header.component';
 
-export { HeaderActions, ActionHelper };
+export { HeaderComponent };

@@ -11,18 +11,13 @@ const routes = {
       load: () => import(/* webpackChunkName: 'home' */ './home'),
     },
     {
-      path: '/question/:quesId',
-      load: () =>
-        import(/* webpackChunkName: 'questionPage' */ './questionPage'),
-    },
-    {
       path: '/login',
       load: () => import(/* webpackChunkName: 'login' */ './login'),
     },
-    // {
-    //   path: '/register',
-    //   load: () => import(/* webpackChunkName: 'register' */ './register'),
-    // },
+    {
+      path: '/register',
+      load: () => import(/* webpackChunkName: 'register' */ './register'),
+    },
     // Wildcard routes, e.g. { path: '(.*)', ... } (must go last)
     {
       path: '(.*)',

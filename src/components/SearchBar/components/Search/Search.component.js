@@ -3,11 +3,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import withStyles from 'isomorphic-style-loader/lib/withStyles';
-import _ from 'lodash';
+import isEmpty from 'lodash/isEmpty';
 import s from './Search.component.css';
 
 const SearchResults = ({ searchResults, selectedKey, ...props }) =>
-  !_.isEmpty(searchResults) ? (
+  !isEmpty(searchResults) ? (
     <ul {...props}>
       {searchResults.map((data, index) => (
         <li
@@ -33,7 +33,7 @@ const RecentSearchResults = ({
   searchResultsLength,
   ...props
 }) =>
-  !_.isEmpty(recentSearches) ? (
+  !isEmpty(recentSearches) ? (
     <ul {...props}>
       <div className={s.popProd}>Recent Searches</div>
       {recentSearches.map((data, index) => (

@@ -8,7 +8,7 @@ const FeedbackBar = props => {
   return (
     <div className={s.root}>
       <div className={s.container}>
-        Did you find what you were looking for?
+        Were we able to help you?
         <button
           className={s.feedbackBtn}
           onClick={onYesClick}
