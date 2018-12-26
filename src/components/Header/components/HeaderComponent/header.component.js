@@ -4,7 +4,7 @@ import withStyles from 'isomorphic-style-loader/lib/withStyles';
 import Paper from '@material-ui/core/Paper';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
-// import Drawer from '@material-ui/core/Drawer';
+import Drawer from '@material-ui/core/Drawer';
 import s from './header.component.css';
 
 import { Link } from '../../../Link';
@@ -12,10 +12,15 @@ import { Link } from '../../../Link';
 class HeaderComponent extends PureComponent {
   state = {
     selected: 0,
+    showDrawer: false,
   };
 
   static defaultProps = {
     background: undefined,
+  };
+
+  toggleDrawer = showDrawer => () => {
+    this.setState({ showDrawer });
   };
 
   handleChange = (e, i) => {
@@ -59,6 +64,7 @@ class HeaderComponent extends PureComponent {
           />
           <Tab
             label="Compare Trainers"
+            onClick={this.toggleDrawer(true)}
             classes={{ label: `${s.label}`, root: `${s.labelRoot}` }}
           />
           <Tab
@@ -72,6 +78,20 @@ class HeaderComponent extends PureComponent {
             classes={{ label: `${s.authButton}`, root: `${s.labelRoot}` }}
           />
         </Tabs>
+        <Drawer
+          anchor="right"
+          open={this.state.showDrawer}
+          onClose={this.toggleDrawer(false)}
+        >
+          <div
+            tabIndex={0}
+            role="button"
+            onClick={this.toggleDrawer(false)}
+            onKeyDown={this.toggleDrawer(false)}
+          >
+            Hello
+          </div>
+        </Drawer>
       </Paper>
     );
   }

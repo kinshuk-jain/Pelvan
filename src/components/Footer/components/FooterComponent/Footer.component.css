@@ -1,6 +1,7 @@
 @import '../../../variables.css';
 
 .root {
+  width: 100%;
   background: var(--CodGray);
   color: var(--Silver);
   border-radius: 4px;

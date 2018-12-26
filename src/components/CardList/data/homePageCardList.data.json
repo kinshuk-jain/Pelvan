@@ -1,0 +1,58 @@
+{
+  "men": [
+    {
+      "type": "header",
+      "title": "Training for men",
+      "text": "Lorem ipsum doler sit amet"
+    },
+    {
+      "type": "picture",
+      "img":
+        "https://images.pexels.com/photos/1229356/pexels-photo-1229356.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+      "alt": "alt text",
+      "label": "Gym"
+    },
+    {
+      "type": "picture",
+      "img":
+        "https://images.pexels.com/photos/1229356/pexels-photo-1229356.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+      "alt": "alt text",
+      "label": "Gym"
+    },
+    {
+      "type": "picture",
+      "img":
+        "https://images.pexels.com/photos/1229356/pexels-photo-1229356.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+      "alt": "alt text",
+      "label": "Gym"
+    }
+  ],
+  "women": [
+    {
+      "type": "header",
+      "title": "Training for women",
+      "text": "Lorem ipsum doler sit amet"
+    },
+    {
+      "type": "picture",
+      "img":
+        "https://images.pexels.com/photos/1554824/pexels-photo-1554824.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+      "alt": "alt text",
+      "label": "Gym"
+    },
+    {
+      "type": "picture",
+      "img":
+        "https://images.pexels.com/photos/1554824/pexels-photo-1554824.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+      "alt": "alt text",
+      "label": "Gym"
+    },
+    {
+      "type": "picture",
+      "img":
+        "https://images.pexels.com/photos/1554824/pexels-photo-1554824.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+      "alt": "alt text",
+      "label": "Gym"
+    }
+  ]
+}

@@ -1,0 +1,80 @@
+@import '../../../variables.css';
+
+.cardList {
+  margin: 40px auto;
+  width: 70%;
+  height: 300px;
+}
+
+.cardContent {
+  height: 100%;
+  position: relative;
+}
+
+.headerCardContent {
+  height: 80%;
+}
+
+.card {
+  height: 100%;
+}
+
+.cardLabel {
+  margin: 0 auto;
+  font-weight: 600;
+  text-align: center;
+  padding-top: 7px;
+}
+
+.cardContent img {
+  height: 100%;
+  width: 100%;
+}
+
+.cardContent:hover .overlay {
+  display: block;
+}
+
+.overlay {
+  display: none;
+  position: absolute;
+  text-align: center;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
+  background: rgba(1, 1, 65, 0.5);
+}
+
+.overlayBtn {
+  background: var(--White);
+  cursor: pointer;
+  font-size: 12px;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  left: 50%;
+}
+
+.btnLabel {
+  font-size: 10px;
+  padding: 5px 9px;
+  font-weight: 600;
+  color: rgb(1, 1, 65);
+}
+
+.overlayBtn:hover {
+  background: var(--White) !important;
+}
+
+.showAll {
+  text-decoration: none;
+  color: var(--Lochmara);
+  font-size: 14px;
+  padding-top: 10px;
+}
+
+.showAll i {
+  padding-left: 3px;
+}

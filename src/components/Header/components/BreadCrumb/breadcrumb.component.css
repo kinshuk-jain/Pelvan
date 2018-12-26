@@ -1,0 +1,22 @@
+@import '../../../variables.css';
+
+.breadCrumbContainer {
+  min-height: 150px;
+  background: transparent;
+  color: var(--White);
+  position: absolute;
+  max-width: 35%;
+  top: 16%;
+  left: 19%;
+  padding: 10px;
+  box-shadow: none;
+}
+
+.subTitle {
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.title {
+  font-size: 32px;
+}

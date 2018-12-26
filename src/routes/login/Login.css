@@ -3,6 +3,7 @@
 .root {
   padding-left: 20px;
   padding-right: 20px;
+  color: var(--Trout);
 }
 
 .container {
@@ -36,7 +37,7 @@
   border-radius: 0;
   background: var(--White, #fff);
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
-  color: var(--DoveGray, #616161);
+  color: var(--Trout);
   font-size: 18px;
   line-height: 1.3333333;
   transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;

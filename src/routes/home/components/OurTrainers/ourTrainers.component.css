@@ -1,0 +1,6 @@
+@import '../../../../components/variables.css';
+
+.container {
+  background: var(--MineShaft);
+  height: 100px;
+}
