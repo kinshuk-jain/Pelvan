@@ -1,0 +1,22 @@
+@import '../../../../components/variables.css';
+
+.btn {
+  text-transform: none;
+  transition: none;
+  color: var(--White);
+  padding: 5px 15px;
+  background: var(--Smalt);
+  position: absolute;
+  top: 56%;
+  left: 5%;
+}
+
+.btn:hover {
+  background: var(--Chambray);
+}
+
+.carousel {
+  width: 70%;
+  margin: 40px auto;
+  position: relative;
+}

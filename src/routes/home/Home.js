@@ -5,7 +5,8 @@ import backgroundImg from '../../images/gym1.png';
 import { Header } from '../../components/Header';
 import { Footer } from '../../components/Footer';
 import { CardList } from '../../components/CardList';
-import { OurTrainers } from './components';
+import { ImageBanner } from '../../components/ImageBanner';
+import { OurTrainers, TitleCarousel } from './components';
 import data from './data/home.data.json';
 
 class Home extends React.Component {
@@ -15,7 +16,14 @@ class Home extends React.Component {
         <Header background={backgroundImg} data={data} />
         <div className={s.container}>
           <CardList />
-          <OurTrainers />
+          <OurTrainers data={data.trainers} />
+          <ImageBanner
+            imageAlt={data.banner.alt}
+            imgSrc={data.banner.img}
+            buttonLabel={data.banner.label}
+            href={data.banner.link}
+          />
+          <TitleCarousel title="reviews" onButtonClick={() => {}} />
         </div>
         <Footer />
       </div>

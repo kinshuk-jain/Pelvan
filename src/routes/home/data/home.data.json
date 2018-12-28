@@ -1,4 +1,49 @@
 {
   "subtitle": "With us you will be better",
-  "title": "choose a trainer with whom you want to become a better person"
+  "title": "choose a trainer with whom you want to become a better person",
+  "trainers": [
+    {
+      "img":
+        "https://webstockreview.net/images/dumbbell-clipart-exersise-17.png",
+      "alt": "Victoria",
+      "link": "/our-trainers?name=Victoria&trainer_id=123"
+    },
+    {
+      "img":
+        "https://webstockreview.net/images/dumbbell-clipart-exersise-17.png",
+      "alt": "Victoria",
+      "link": "/our-trainers?name=Victoria&trainer_id=123"
+    },
+    {
+      "img":
+        "https://webstockreview.net/images/dumbbell-clipart-exersise-17.png",
+      "alt": "Victoria",
+      "link": "/our-trainers?name=Victoria&trainer_id=123"
+    },
+    {
+      "img":
+        "https://webstockreview.net/images/dumbbell-clipart-exersise-17.png",
+      "alt": "Victoria",
+      "link": "/our-trainers?name=Victoria&trainer_id=123"
+    },
+    {
+      "img":
+        "https://webstockreview.net/images/dumbbell-clipart-exersise-17.png",
+      "alt": "Victoria",
+      "link": "/our-trainers?name=Victoria&trainer_id=123"
+    },
+    {
+      "img":
+        "https://webstockreview.net/images/dumbbell-clipart-exersise-17.png",
+      "alt": "Victoria",
+      "link": "/our-trainers?name=Victoria&trainer_id=123"
+    }
+  ],
+  "banner": {
+    "img":
+      "http://www.fightstorepro.com/blog/wp-content/uploads/2014/02/thaishortsbanner.png",
+    "alt": "muay thai",
+    "label": "Go to Workout",
+    "link": "/our-trainers?category=muay-thai"
+  }
 }

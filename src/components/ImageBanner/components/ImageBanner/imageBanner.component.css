@@ -1,0 +1,28 @@
+@import '../../../variables.css';
+
+.imageBanner {
+  width: 70%;
+  margin: 40px auto;
+  height: 300px;
+  position: relative;
+}
+
+.imageBanner img {
+  max-height: 100%;
+  max-width: 100%;
+}
+
+.imgBtn {
+  text-transform: none;
+  transition: none;
+  color: var(--White);
+  padding: 5px 15px;
+  background: var(--Smalt);
+  position: absolute;
+  top: 56%;
+  left: 5%;
+}
+
+.imgBtn:hover {
+  background: var(--Chambray);
+}

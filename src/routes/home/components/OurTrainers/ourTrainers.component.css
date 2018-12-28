@@ -2,5 +2,46 @@
 
 .container {
   background: var(--MineShaft);
-  height: 100px;
+  height: 200px;
+  margin-top: 100px;
+  padding: 0 15%;
+  color: var(--White);
+}
+
+.header {
+  display: inline-block;
+  width: 12%;
+  height: 100%;
+  vertical-align: top;
+}
+
+.carousel {
+  display: inline-block;
+  margin-left: 10px;
+  width: 86%;
+  position: relative;
+  top: -30px;
+}
+
+.viewAllBtn {
+  text-transform: none;
+  transition: none;
+  color: var(--White);
+  padding: 5px 15px;
+  background: var(--Smalt);
+}
+
+.viewAllBtn:hover {
+  background: var(--Chambray);
+}
+
+.trainer {
+  display: inline-block;
+  height: 230px;
+  width: 100%;
+}
+
+.trainerImg {
+  max-width: 100%;
+  max-height: 100%;
 }

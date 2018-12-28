@@ -78,3 +78,7 @@
 .showAll i {
   padding-left: 3px;
 }
+
+.showAll:hover {
+  color: var(--PictonBlue);
+}
