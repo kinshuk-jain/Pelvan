@@ -38,6 +38,7 @@ export const Slideshow = ({
       width: '97%',
       overflowX: 'hidden',
       verticalAlign: 'middle',
+      padding: '0 20px',
       ...slideshowStyle,
     }}
   >

@@ -1,14 +1,16 @@
 @import '../../components/variables.css';
 
 .container {
-  margin: 0 auto;
+  margin: 40px auto;
   padding: 0 0 40px;
+  width: 70%;
 }
 
-.reviewCards {
-  width: 90%;
+.reviewCard {
+  display: inline-block;
   position: relative;
   height: 200px;
-  margin-left: 10px;
+  width: 45%;
+  margin: 2.5%;
   overflow: visible !important;
 }

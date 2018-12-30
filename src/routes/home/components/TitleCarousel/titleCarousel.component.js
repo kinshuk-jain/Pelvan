@@ -11,10 +11,10 @@ const Back = () => <i className="icon-chevron-left" />;
 const Next = () => <i className="icon-chevron-right" />;
 
 const TitleCarousel = props => {
-  const { title, link } = props;
+  const { title, link, children } = props;
   return (
     <div className={s.carousel}>
-      <div>{title}</div>
+      <div className={s.title}>{title}</div>
       <Button className={s.btn} onClick={() => history.push(link)}>
         View All
       </Button>
@@ -23,12 +23,9 @@ const TitleCarousel = props => {
         gap={20}
         prevBtn={<Back />}
         nextBtn={<Next />}
+        infinite
       >
-        <span>1</span>
-        <span>2</span>
-        <span>3</span>
-        <span>4</span>
-        <span>5</span>
+        {children}
       </LightCarousel>
     </div>
   );
@@ -36,7 +33,7 @@ const TitleCarousel = props => {
 
 TitleCarousel.propTypes = {
   title: PropTypes.string.isRequired,
-  link: PropTypes.func.isRequired,
+  link: PropTypes.string.isRequired,
 };
 
 export default withStyles(s)(TitleCarousel);

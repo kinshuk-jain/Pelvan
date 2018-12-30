@@ -1,16 +1,16 @@
 import React from 'react';
 import { Layout } from '../../components/Layout';
-import Register from './Register';
+import About from './About';
 
-const title = 'New User Registration';
+const title = 'About Us';
 
 function action() {
   return {
-    chunks: ['register'],
+    chunks: ['about'],
     title,
     component: (
       <Layout>
-        <Register title={title} />
+        <About title={title} />
       </Layout>
     ),
   };

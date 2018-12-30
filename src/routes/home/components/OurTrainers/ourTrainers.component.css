@@ -10,15 +10,19 @@
 
 .header {
   display: inline-block;
-  width: 12%;
+  width: 11%;
   height: 100%;
   vertical-align: top;
+}
+
+.title {
+  font-weight: 500;
 }
 
 .carousel {
   display: inline-block;
   margin-left: 10px;
-  width: 86%;
+  width: 87%;
   position: relative;
   top: -30px;
 }
@@ -44,4 +48,5 @@
 .trainerImg {
   max-width: 100%;
   max-height: 100%;
+  cursor: pointer;
 }

@@ -1,5 +1,6 @@
 import React from 'react';
 import withStyles from 'isomorphic-style-loader/lib/withStyles';
+import get from 'lodash/get';
 import s from './Home.css';
 import backgroundImg from '../../images/gym1.png';
 import { Header } from '../../components/Header';
@@ -7,6 +8,7 @@ import { Footer } from '../../components/Footer';
 import { CardList } from '../../components/CardList';
 import { ImageBanner } from '../../components/ImageBanner';
 import { OurTrainers, TitleCarousel } from './components';
+import { ReviewCard } from '../../components/ReviewCard';
 import data from './data/home.data.json';
 
 class Home extends React.Component {
@@ -18,12 +20,16 @@ class Home extends React.Component {
           <CardList />
           <OurTrainers data={data.trainers} />
           <ImageBanner
-            imageAlt={data.banner.alt}
+            imgAlt={data.banner.alt}
             imgSrc={data.banner.img}
             buttonLabel={data.banner.label}
-            href={data.banner.link}
+            link={data.banner.link}
           />
-          <TitleCarousel title="reviews" onButtonClick={() => {}} />
+          <TitleCarousel title="Reviews" link="/reviews">
+            {get(data, 'reviews', []).map((review, i) => (
+              <ReviewCard key={i} className={s.reviewCards} {...review} />
+            ))}
+          </TitleCarousel>
         </div>
         <Footer />
       </div>

@@ -58,7 +58,7 @@ class Html extends React.Component {
           <script
             dangerouslySetInnerHTML={{
               __html:
-                `(function(){var ls;if(typeof Storage!=='undefined')ls=localStorage;if(ls&&ls.getItem('fonts'))return;var d=document,l=d.createElement('link'),now=new Date().getTime();var url='https://fonts.googleapis.com/css?family=Libre+Franklin:400,600';l.rel="stylesheet";l.crossorigin=true;l.href=url;d.head.appendChild(l);var i=d.createElement('img');i.onerror=function(){var fontLoadTime=new Date().getTime()-now;if(fontLoadTime>3000)d.head.removeChild(l);else ls&&ls.setItem('fonts', true);};i.src=url;})()`
+                `(function(){var d=document,l=d.createElement('link'),url='https://fonts.googleapis.com/css?family=Roboto:400,500';l.rel="stylesheet";l.crossorigin=true;l.href=url;d.head.appendChild(l)})()`
             }}
           />
         </head>

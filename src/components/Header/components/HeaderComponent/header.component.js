@@ -5,13 +5,13 @@ import Paper from '@material-ui/core/Paper';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import Drawer from '@material-ui/core/Drawer';
+import history from '../../../../history';
 import s from './header.component.css';
 
 import { Link } from '../../../Link';
 
 class HeaderComponent extends PureComponent {
   state = {
-    selected: 0,
     showDrawer: false,
   };
 
@@ -24,11 +24,12 @@ class HeaderComponent extends PureComponent {
   };
 
   handleChange = (e, i) => {
-    this.setState({ selected: i });
+    this.props.handleChange(e, i);
   };
 
   render() {
-    const { background } = this.props;
+    const { background, selectedTab } = this.props;
+
     return (
       <Paper className={s.header}>
         <img src={background} alt="Train with us" />
@@ -39,7 +40,7 @@ class HeaderComponent extends PureComponent {
         </div>
         <Tabs
           classes={{ root: `${s.tabContainer}` }}
-          value={this.state.selected}
+          value={selectedTab}
           indicatorColor="primary"
           textColor="primary"
           onChange={this.handleChange}
@@ -47,11 +48,12 @@ class HeaderComponent extends PureComponent {
         >
           <Tab
             label="Home"
-            href="/"
+            onClick={() => history.push('/')}
             classes={{ label: `${s.label}`, root: `${s.labelRoot}` }}
           />
           <Tab
             label="About Us"
+            onClick={() => history.push('/about')}
             classes={{ label: `${s.label}`, root: `${s.labelRoot}` }}
           />
           <Tab
@@ -60,6 +62,7 @@ class HeaderComponent extends PureComponent {
           />
           <Tab
             label="Reviews"
+            onClick={() => history.push('/reviews')}
             classes={{ label: `${s.label}`, root: `${s.labelRoot}` }}
           />
           <Tab
@@ -70,11 +73,6 @@ class HeaderComponent extends PureComponent {
           <Tab
             label="Login"
             href="/login"
-            classes={{ label: `${s.authButton}`, root: `${s.labelRoot}` }}
-          />
-          <Tab
-            label="Sign Up"
-            href="/register"
             classes={{ label: `${s.authButton}`, root: `${s.labelRoot}` }}
           />
         </Tabs>
@@ -99,6 +97,8 @@ class HeaderComponent extends PureComponent {
 
 HeaderComponent.propTypes = {
   background: PropTypes.string,
+  handleChange: PropTypes.func.isRequired,
+  selectedTab: PropTypes.number.isRequired,
 };
 
 export default withStyles(s)(HeaderComponent);

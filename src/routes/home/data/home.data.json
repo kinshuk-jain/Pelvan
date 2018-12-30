@@ -9,14 +9,12 @@
       "link": "/our-trainers?name=Victoria&trainer_id=123"
     },
     {
-      "img":
-        "https://webstockreview.net/images/dumbbell-clipart-exersise-17.png",
+      "img": "https://ya-webdesign.com/images/black-woman-dancing-png-3.png",
       "alt": "Victoria",
       "link": "/our-trainers?name=Victoria&trainer_id=123"
     },
     {
-      "img":
-        "https://webstockreview.net/images/dumbbell-clipart-exersise-17.png",
+      "img": "https://i.dlpng.com/static/png/245022_thumb.png",
       "alt": "Victoria",
       "link": "/our-trainers?name=Victoria&trainer_id=123"
     },
@@ -45,5 +43,36 @@
     "alt": "muay thai",
     "label": "Go to Workout",
     "link": "/our-trainers?category=muay-thai"
-  }
+  },
+  "reviews": [
+    {
+      "title": "Johny Bobson",
+      "subtitle": "New Orleans Centre",
+      "img":
+        "http://collectivebehaviour.com/wp-content/uploads/2015/11/Iain-photo-by-Gabriel-Miller.jpg",
+      "review":
+        "Main body banwa dunga, teri chahat mein Main body banwa dunga, teri chahat mein Main body banwa dunga, teri chahat mein Main body banwa dunga, teri chahat mein Main body banwa dunga, teri chahat mein Main body banwa dunga, teri chahat mein Main body banwa dunga, teri chahat mein Main body banwa dunga, teri chahat mein Main body banwa dunga, teri chahat mein Main body banwa dunga, teri chahat mein Main body banwa dunga, teri chahat mein Main body banwa dunga, teri chahat mein Main body banwa dunga, teri chahat mein Main body banwa dunga, teri chahat mein Main body banwa dunga, teri chahat mein"
+    },
+    {
+      "title": "Johny Bobson",
+      "subtitle": "New Orleans Centre",
+      "img":
+        "http://collectivebehaviour.com/wp-content/uploads/2015/11/Iain-photo-by-Gabriel-Miller.jpg",
+      "review": "Main body banwa dunga, teri chahat mein"
+    },
+    {
+      "title": "Johny Bobson",
+      "subtitle": "New Orleans Centre",
+      "img":
+        "http://collectivebehaviour.com/wp-content/uploads/2015/11/Iain-photo-by-Gabriel-Miller.jpg",
+      "review": "Main body banwa dunga, teri chahat mein"
+    },
+    {
+      "title": "Johny Bobson",
+      "subtitle": "New Orleans Centre",
+      "img":
+        "http://collectivebehaviour.com/wp-content/uploads/2015/11/Iain-photo-by-Gabriel-Miller.jpg",
+      "review": "Main body banwa dunga, teri chahat mein"
+    }
+  ]
 }

@@ -7,8 +7,8 @@
   padding: 5px 15px;
   background: var(--Smalt);
   position: absolute;
-  top: 56%;
-  left: 5%;
+  right: 3%;
+  margin-bottom: 20px;
 }
 
 .btn:hover {
@@ -19,4 +19,11 @@
   width: 70%;
   margin: 40px auto;
   position: relative;
+}
+
+.title {
+  font-size: 28px;
+  font-weight: 500;
+  display: inline-block;
+  margin-bottom: 20px;
 }

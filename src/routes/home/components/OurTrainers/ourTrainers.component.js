@@ -2,6 +2,7 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import withStyles from 'isomorphic-style-loader/lib/withStyles';
 import Button from '@material-ui/core/Button';
+import history from '../../../../history';
 import { LightCarousel } from '../../../../components/Carousel';
 
 import s from './ourTrainers.component.css';
@@ -15,7 +16,7 @@ class OurTrainers extends PureComponent {
     return (
       <div className={s.container}>
         <div className={s.header}>
-          <h2>Our Trainers</h2>
+          <h2 className={s.title}>Our Trainers</h2>
           <Button className={s.viewAllBtn}>View all</Button>
         </div>
         <div className={s.carousel}>
@@ -24,14 +25,15 @@ class OurTrainers extends PureComponent {
             gap={20}
             prevBtn={<Back />}
             nextBtn={<Next />}
+            infinite
           >
-            {data.map(trainer => (
-              <div className={s.trainer}>
+            {data.map((trainer, i) => (
+              <div className={s.trainer} key={i}>
                 <img
                   className={s.trainerImg}
                   src={trainer.img}
                   alt={trainer.alt}
-                  onClick={trainer.link}
+                  onClick={() => history.push(trainer.link)}
                 />
               </div>
             ))}

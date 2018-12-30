@@ -15,7 +15,7 @@ class BreadCrumbComponent extends Component {
     return (
       <Card classes={{ root: `${s.breadCrumbContainer}` }}>
         <p className={s.subTitle}>{data.subtitle}</p>
-        <h2 className={s.title}>{data.title.toUpperCase()}</h2>
+        <div className={s.title}>{data.title.toUpperCase()}</div>
         {this.props.render()}
       </Card>
     );

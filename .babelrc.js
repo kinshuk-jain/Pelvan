@@ -8,7 +8,7 @@ module.exports = {
         targets: {
           node: 'current',
         },
-        useBuiltIns: 'usage'
+        useBuiltIns: 'usage',
       },
     ],
     'stage-2',
