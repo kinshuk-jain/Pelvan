@@ -79,6 +79,8 @@ module.exports = {
     // allow array indices to be used in keys
     'react/no-array-index-key': 'off',
 
+    'no-plusplus': 'off',
+
     // Turn off default export warning
     'import/prefer-default-export': 'off',
 

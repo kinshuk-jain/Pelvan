@@ -1,5 +1,6 @@
 import React from 'react';
 import withStyles from 'isomorphic-style-loader/lib/withStyles';
+// import Button from '@material-ui/core/Button';
 import get from 'lodash/get';
 import s from './Home.css';
 import backgroundImg from '../../images/gym1.jpg';
@@ -11,11 +12,21 @@ import { OurTrainers, TitleCarousel } from './components';
 import { ReviewCard } from '../../components/ReviewCard';
 import data from './data/home.data.json';
 
+// const ChooseButton = () => (
+//   <Button variant="contained" className={s.headerBtn} disableRipple>
+//     Choose a Trainer
+//   </Button>
+// );
+
 class Home extends React.Component {
   render() {
     return (
       <div>
-        <Header background={backgroundImg} data={data} />
+        <Header
+          background={backgroundImg}
+          data={data}
+          // render={() => <ChooseButton />}
+        />
         <div className={s.container}>
           <CardList />
           <OurTrainers data={data.trainers} />

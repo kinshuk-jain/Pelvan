@@ -1,0 +1,21 @@
+@import '../../../variables.css';
+
+.progressive {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  outline: none;
+}
+
+.progressive img {
+  display: block;
+  width: 100%;
+  max-width: none;
+  height: auto;
+  border: 0 none;
+}
+
+.preview {
+  filter: blur(2vw);
+  transform: scale(1.05);
+}

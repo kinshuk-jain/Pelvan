@@ -9,11 +9,12 @@
   transition: all 0.5s ease-in-out;
 }
 
-.header img {
+.headerImg {
   /* TODO: Change this to contain */
   object-fit: cover;
   width: 100%;
   max-height: 580px;
+  display: inline-block;
 }
 
 .logoInfo {

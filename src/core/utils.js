@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable no-unused-expressions */
 
 import throttle from 'lodash/throttle';
@@ -127,4 +128,103 @@ export function fetchAndParseLSItem(key) {
     }
   }
   return null;
+}
+
+/**
+ * Progressive Image loading
+ */
+
+// replace with full image
+function loadFullImage(item, className) {
+  const href = item && (item.getAttribute('data-href') || item.href);
+  if (!href) return;
+
+  // load image
+  const img = new Image();
+  if (item.dataset) {
+    img.srcset = item.dataset.srcset || '';
+    img.sizes = item.dataset.sizes || '';
+  }
+  img.src = href;
+  img.className = className;
+
+  // replace image
+  const addImg = () => {
+    requestAnimationFrame(() => {
+      // disable click
+      if (href === item.href) {
+        // eslint-disable-next-line no-param-reassign
+        item.style.cursor = 'default';
+        item.addEventListener(
+          'click',
+          e => {
+            e.preventDefault();
+          },
+          false,
+        );
+      }
+
+      // preview image
+      const pImg = item.children[0];
+
+      // add full image
+      item.insertBefore(img, pImg).addEventListener('animationend', () => {
+        // remove preview image
+        if (pImg) {
+          img.alt = pImg.alt || '';
+          img.title = pImg.title || '';
+          item.removeChild(pImg);
+        }
+
+        img.classList.remove(className);
+      });
+    });
+  };
+
+  if (img.complete) addImg();
+  else img.onload = addImg;
+}
+
+export function inView(pItem, _pCount, className) {
+  if (pItem.length)
+    requestAnimFrame(() => {
+      // eslint-disable-next-line one-var
+      let cRect,
+        cT,
+        cH,
+        p = 0;
+      const wH = window.innerHeight;
+
+      while (p < pItem.length) {
+        cRect = pItem[p].getBoundingClientRect();
+        cT = cRect.top;
+        cH = cRect.height;
+
+        if (cT + cH > 0 && wH > cT) {
+          loadFullImage(pItem[p], className);
+          pItem[p].classList.remove('replace');
+        } else p++;
+      }
+
+      // eslint-disable-next-line no-param-reassign
+      _pCount = pItem.length;
+    });
+}
+
+export function imgProgressiveload(pItem, pCount, className) {
+  // DOM mutation observer
+  if (MutationObserver) {
+    const observer = new MutationObserver(() => {
+      if (pItem.length !== pCount) inView(pItem, pCount, className);
+    });
+    observer.observe(document.body, {
+      subtree: true,
+      childList: true,
+      attributes: true,
+      characterData: true,
+    });
+  }
+
+  // initial check
+  inView(pItem, pCount, className);
 }

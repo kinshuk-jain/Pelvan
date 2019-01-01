@@ -2,10 +2,16 @@
 
 import React from 'react';
 import { connect } from 'react-redux';
+import withStyles from 'isomorphic-style-loader/lib/withStyles';
 import PropTypes from 'prop-types';
 
-import { addRemoveScrollEventListener } from '../../../../core/utils';
+import {
+  addRemoveScrollEventListener,
+  imgProgressiveload,
+  inView,
+} from '../../../../core/utils';
 import { Page } from '../../components';
+import s from './Layout.container.css';
 
 class LayoutContainer extends React.Component {
   static propTypes = {
@@ -22,6 +28,19 @@ class LayoutContainer extends React.Component {
   };
 
   componentDidMount() {
+    let progressiveImageCount;
+    const progressiveImages = document.getElementsByClassName(
+      'progressive replace',
+    );
+
+    imgProgressiveload(progressiveImages, progressiveImageCount, s.reveal);
+
+    window.addEventListener(
+      'resize',
+      () => inView(progressiveImages, progressiveImageCount, s.reveal),
+      false,
+    );
+
     addRemoveScrollEventListener(() => {
       const top = window.pageYOffset || document.documentElement.scrollTop;
       if (top > 200) {
@@ -29,6 +48,7 @@ class LayoutContainer extends React.Component {
         return;
       }
       this.state.showScrollToTop && this.setState({ showScrollToTop: false });
+      inView(progressiveImages, progressiveImageCount, s.reveal);
     });
   }
 
@@ -47,4 +67,6 @@ const mapStateToProps = ({ hideTopBar }) => ({
   hideTopBar,
 });
 
-export const Layout = connect(mapStateToProps, null)(LayoutContainer);
+export const Layout = withStyles(s)(
+  connect(mapStateToProps, null)(LayoutContainer),
+);

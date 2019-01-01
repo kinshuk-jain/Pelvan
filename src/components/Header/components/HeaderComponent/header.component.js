@@ -7,8 +7,10 @@ import Tab from '@material-ui/core/Tab';
 import Drawer from '@material-ui/core/Drawer';
 import history from '../../../../history';
 import s from './header.component.css';
+import tinyImage from '../../../../images/tiny_gym1.jpg';
 
 import { Link } from '../../../Link';
+import { ProgressiveImage } from '../../../ProgressiveImage';
 
 class HeaderComponent extends PureComponent {
   state = {
@@ -32,7 +34,13 @@ class HeaderComponent extends PureComponent {
 
     return (
       <Paper className={s.header}>
-        <img src={background} alt="Train with us" />
+        <ProgressiveImage
+          className={s.headerImg}
+          tinyImage={tinyImage}
+          src={background}
+          alt="Train with us"
+          title="Pelvan"
+        />
         <div className={s.logoInfo}>
           <Link className={s.logo} target="_self" to="/">
             Pelvan
