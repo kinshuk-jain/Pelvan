@@ -43,12 +43,12 @@ class LayoutContainer extends React.Component {
 
     addRemoveScrollEventListener(() => {
       const top = window.pageYOffset || document.documentElement.scrollTop;
+      inView(progressiveImages, progressiveImageCount, s.reveal);
       if (top > 200) {
         !this.state.showScrollToTop && this.setState({ showScrollToTop: true });
         return;
       }
       this.state.showScrollToTop && this.setState({ showScrollToTop: false });
-      inView(progressiveImages, progressiveImageCount, s.reveal);
     });
   }
 

@@ -199,7 +199,6 @@ export function inView(pItem, _pCount, className) {
         cRect = pItem[p].getBoundingClientRect();
         cT = cRect.top;
         cH = cRect.height;
-
         if (cT + cH > 0 && wH > cT) {
           loadFullImage(pItem[p], className);
           pItem[p].classList.remove('replace');

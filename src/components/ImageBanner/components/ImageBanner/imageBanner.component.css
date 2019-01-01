@@ -7,7 +7,7 @@
   position: relative;
 }
 
-.imageBanner img {
+.imageBanner a {
   max-height: 100%;
   max-width: 100%;
 }
