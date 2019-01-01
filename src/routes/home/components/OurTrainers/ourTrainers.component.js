@@ -35,6 +35,7 @@ class OurTrainers extends PureComponent {
                   alt={trainer.alt}
                   onClick={() => history.push(trainer.link)}
                 />
+                <div className={s.nameTag}>Victoria</div>
               </div>
             ))}
           </LightCarousel>

@@ -71,6 +71,7 @@ export const Slide = ({ children, autoWidth, slideWidth, gap, ...props }) => (
     style={{
       position: 'relative',
       display: 'inline-block',
+      verticalAlign: 'top',
       width: autoWidth,
       marginRight: gap,
     }}

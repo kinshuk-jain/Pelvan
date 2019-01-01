@@ -27,6 +27,21 @@
   top: -30px;
 }
 
+.nameTag {
+  display: inline-block;
+  visibility: hidden;
+  opacity: 0;
+  height: 80px;
+  margin-left: 5px;
+  color: var(--White);
+}
+
+.trainer:hover .nameTag {
+  transition: visibility 0.2s ease-in, opacity 0.5s ease-in;
+  opacity: 1;
+  visibility: visible;
+}
+
 .viewAllBtn {
   text-transform: none;
   transition: none;

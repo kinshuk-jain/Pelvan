@@ -1,7 +1,7 @@
 import React from 'react';
 import withStyles from 'isomorphic-style-loader/lib/withStyles';
 import get from 'lodash/get';
-import backgroundImg from '../../images/gym1.png';
+import backgroundImg from '../../images/gym1.jpg';
 import { Header } from '../../components/Header';
 import { ReviewCard } from '../../components/ReviewCard';
 import data from './data/reviews.data.json';

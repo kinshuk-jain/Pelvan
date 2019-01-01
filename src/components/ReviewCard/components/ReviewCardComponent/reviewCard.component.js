@@ -8,17 +8,24 @@ import Typography from '@material-ui/core/Typography';
 import Tooltip from '@material-ui/core/Tooltip';
 import s from './reviewCard.component.css';
 
-const ReviewCardComponent = ({ className, title, subtitle, review, img }) => (
+const ReviewCardComponent = ({
+  className,
+  title,
+  subtitle,
+  review,
+  img,
+  alt,
+}) => (
   <Card classes={{ root: className }}>
     <CardMedia
       component="img"
       className={s.icon}
-      alt="Contemplative Reptile"
+      alt={alt}
       height="140"
       image={img}
-      title="Contemplative Reptile"
+      title={alt}
     />
-    <CardContent>
+    <CardContent classes={{ root: s.noBottomPadding }}>
       <Typography variant="h6" color="inherit" classes={{ root: s.title }}>
         {title}
       </Typography>
@@ -41,6 +48,7 @@ const ReviewCardComponent = ({ className, title, subtitle, review, img }) => (
 ReviewCardComponent.defaultProps = {
   className: '',
   subtitle: '',
+  alt: 'image',
 };
 
 ReviewCardComponent.propTypes = {
@@ -49,6 +57,7 @@ ReviewCardComponent.propTypes = {
   subtitle: PropTypes.string,
   review: PropTypes.string.isRequired,
   img: PropTypes.string.isRequired,
+  alt: PropTypes.string,
 };
 
 export default withStyles(s)(ReviewCardComponent);

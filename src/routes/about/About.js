@@ -1,7 +1,7 @@
 import React from 'react';
 // import PropTypes from 'prop-types';
 import withStyles from 'isomorphic-style-loader/lib/withStyles';
-import backgroundImg from '../../images/gym1.png';
+import backgroundImg from '../../images/gym1.jpg';
 
 import { Header } from '../../components/Header';
 import data from './data/about.data.json';

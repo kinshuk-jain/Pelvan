@@ -19,14 +19,16 @@ html {
 }
 
 /* Track */
-::-webkit-scrollbar-track {
+
+/* ::-webkit-scrollbar-track {
   background: var(--Black);
-}
+} */
 
 /* Handle */
-::-webkit-scrollbar-thumb {
+
+/* ::-webkit-scrollbar-thumb {
   background: var(--CodGray2);
-}
+} */
 
 body {
   margin: 0;

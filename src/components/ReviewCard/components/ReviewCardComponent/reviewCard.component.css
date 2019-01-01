@@ -34,6 +34,11 @@ blockquote::before {
   left: -40px;
 }
 
+.noBottomPadding {
+  padding-bottom: 0 !important;
+  padding-top: 4px;
+}
+
 /* blockquote::after {
   position: absolute;
   float:right;

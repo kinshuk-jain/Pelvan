@@ -2,7 +2,7 @@ import React from 'react';
 import withStyles from 'isomorphic-style-loader/lib/withStyles';
 import get from 'lodash/get';
 import s from './Home.css';
-import backgroundImg from '../../images/gym1.png';
+import backgroundImg from '../../images/gym1.jpg';
 import { Header } from '../../components/Header';
 import { Footer } from '../../components/Footer';
 import { CardList } from '../../components/CardList';

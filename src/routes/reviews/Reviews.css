@@ -8,8 +8,9 @@
 
 .reviewCard {
   display: inline-block;
+  vertical-align: top;
   position: relative;
-  height: 200px;
+  height: 250px;
   width: 45%;
   margin: 2.5%;
   overflow: visible !important;
