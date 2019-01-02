@@ -1,6 +1,7 @@
 /* eslint-disable react/prop-types, no-restricted-globals */
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import debounce from 'lodash/debounce';
 import * as R from 'ramda';
 
 const equalAt = (a, b, path) => R.eqBy(R.view(R.lensPath(path)), a, b);
@@ -261,7 +262,9 @@ class LightCarousel extends Component {
     *
   */
   setResizeEvent = () => {
-    window.addEventListener('resize', this.handleResize);
+    if (this.props.responsive) {
+      window.addEventListener('resize', this.handleResize);
+    }
   };
 
   /**
@@ -291,12 +294,11 @@ class LightCarousel extends Component {
 
   /**
     * Handle the logic when window resizes
-    * TODO: Add a debounce prop to prevent doing lots of calculations
   */
-  handleResize = () => {
+  handleResize = debounce(() => {
     this.setResizeBreakpoint();
     this.resetSliderPosition();
-  };
+  }, 300);
 
   /* When a resize occurs the slides will be reset
     * to their initial position. This will prevent the slider

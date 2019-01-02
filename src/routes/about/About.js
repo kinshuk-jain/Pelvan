@@ -12,7 +12,7 @@ class About extends React.Component {
   render() {
     return (
       <div>
-        <Header background={backgroundImg} data={data} />
+        <Header defaultTab={1} background={backgroundImg} data={data} />
         <div className={s.container}>
           <p>
             We help you achieve the levels of fiteness you always desired

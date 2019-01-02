@@ -14,12 +14,18 @@ class Header extends Component {
   };
 
   render() {
-    const { render, data, background, changeHeaderTab } = this.props;
+    const {
+      render,
+      data,
+      background,
+      changeHeaderTab,
+      defaultTab,
+    } = this.props;
     return [
       <HeaderComponent
         background={background}
         key={1}
-        selectedTab={changeHeaderTab}
+        selectedTab={changeHeaderTab || defaultTab}
         handleChange={this.handleChange}
       />,
       <BreadCrumbComponent data={data} render={render} key={2} />,
@@ -30,6 +36,7 @@ class Header extends Component {
 Header.propTypes = {
   background: Proptypes.string.isRequired,
   data: Proptypes.object.isRequired,
+  defaultTab: Proptypes.number.isRequired,
   changeTab: Proptypes.func.isRequired,
   changeHeaderTab: Proptypes.number.isRequired,
   render: Proptypes.func,

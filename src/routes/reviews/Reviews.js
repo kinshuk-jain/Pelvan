@@ -12,7 +12,7 @@ class Reviews extends React.Component {
   render() {
     return (
       <div>
-        <Header background={backgroundImg} data={data} />
+        <Header defaultTab={3} background={backgroundImg} data={data} />
         <div className={s.container}>
           {get(data, 'reviews', []).map((review, i) => (
             <ReviewCard key={i} className={s.reviewCard} {...review} />

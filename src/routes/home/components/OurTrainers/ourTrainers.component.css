@@ -29,6 +29,8 @@
 
 .nameTag {
   display: inline-block;
+  position: absolute;
+  top: 50%;
   visibility: hidden;
   opacity: 0;
   height: 80px;
@@ -56,6 +58,7 @@
 
 .trainer {
   display: inline-block;
+  position: relative;
   height: 230px;
   width: 100%;
 }

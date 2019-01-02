@@ -29,6 +29,7 @@ class Home extends React.Component {
         <Header
           background={backgroundImg}
           data={data}
+          defaultTab={0}
           render={() => <ChooseButton />}
         />
         <div className={s.container}>

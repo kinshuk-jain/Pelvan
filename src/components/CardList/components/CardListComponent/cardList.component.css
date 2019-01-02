@@ -3,6 +3,7 @@
 .cardList {
   margin: 40px auto;
   width: 70%;
+  min-width: var(--max-content-width);
   height: 300px;
 }
 
