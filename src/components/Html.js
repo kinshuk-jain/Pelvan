@@ -58,7 +58,7 @@ class Html extends React.Component {
           <script
             dangerouslySetInnerHTML={{
               __html:
-                `(function(){var d=document,l=d.createElement('link'),url='https://fonts.googleapis.com/css?family=Roboto:400,500';l.rel="stylesheet";l.crossorigin=true;l.href=url;d.head.appendChild(l)})()`
+                `(function(){var d=document,l=d.createElement('link'),url='https://fonts.googleapis.com/css?family=Roboto:400,500,600';l.rel="stylesheet";l.crossorigin=true;l.href=url;d.head.appendChild(l)})()`
             }}
           />
         </head>

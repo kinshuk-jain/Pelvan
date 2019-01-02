@@ -12,13 +12,3 @@
   margin: 40px auto 0;
   overflow: visible !important;
 }
-
-/* add !important against all CSS properties here to override material-ui css */
-.headerBtn {
-  text-transform: none !important;
-  font-size: 14px !important;
-  color: var(--Smalt) !important;
-  background: var(--White) !important;
-  margin-bottom: 10px !important;
-  top: 20px;
-}

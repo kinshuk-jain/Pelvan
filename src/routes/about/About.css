@@ -3,5 +3,55 @@
 .container {
   margin: 0 auto;
   padding: 0 0 40px;
-  max-width: var(--max-content-width, 1024px);
+  min-width: var(--max-content-width);
+}
+
+.card {
+  padding: 5% 20%;
+  position: relative;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  overflow: visible !important;
+}
+
+.card:nth-child(odd) {
+  background: var(--Gallery);
+}
+
+.videoCard {
+  padding: 0;
+}
+
+.videoCaption {
+  position: absolute;
+  color: var(--White);
+  font-weight: 600;
+  top: 25%;
+  left: 25%;
+  font-size: 26px;
+}
+
+.video {
+  width: 100%;
+}
+
+/* .card:not(:last-child)::after {
+  content: ' ';
+  width: 0;
+  height: 0;
+  position: absolute;
+  left: 50%;
+  top: 100%;
+  border: 10px solid transparent;
+  border-top-color: var(--Gallery);
+  z-index: 2;
+}
+
+.card:nth-child(even)::after {
+  border-top-color: var(--White);
+} */
+
+.title {
+  font-size: 20px;
+  font-weight: 600;
 }

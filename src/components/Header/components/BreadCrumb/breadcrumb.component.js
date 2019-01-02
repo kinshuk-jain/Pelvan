@@ -2,28 +2,39 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import withStyles from 'isomorphic-style-loader/lib/withStyles';
 import Card from '@material-ui/core/Card';
+import Button from '@material-ui/core/Button';
 
 import s from './breadcrumb.component.css';
 
+const ChooseButton = () => (
+  <Button
+    variant="contained"
+    classes={{ root: `${s.headerBtn}` }}
+    disableRipple
+  >
+    Choose a Trainer
+  </Button>
+);
+
 class BreadCrumbComponent extends Component {
   static defaultProps = {
-    render: () => {},
+    showChooseTrainer: true,
   };
 
   render() {
-    const { data } = this.props;
+    const { data, showChooseTrainer } = this.props;
     return (
       <Card classes={{ root: `${s.breadCrumbContainer}` }}>
         <p className={s.subTitle}>{data.subtitle}</p>
         <div className={s.title}>{data.title.toUpperCase()}</div>
-        {this.props.render()}
+        {showChooseTrainer && <ChooseButton />}
       </Card>
     );
   }
 }
 
 BreadCrumbComponent.propTypes = {
-  render: PropTypes.func,
+  showChooseTrainer: PropTypes.bool,
   data: PropTypes.object.isRequired,
 };
 
