@@ -11,13 +11,19 @@ const Back = () => <i className="icon-chevron-left" />;
 const Next = () => <i className="icon-chevron-right" />;
 
 class OurTrainers extends PureComponent {
+  clickHandler = () => {
+    history.push('/our-trainers');
+  };
+
   render() {
     const { data } = this.props;
     return (
       <div className={s.container}>
         <div className={s.header}>
           <h2 className={s.title}>Our Trainers</h2>
-          <Button className={s.viewAllBtn}>View all</Button>
+          <Button className={s.viewAllBtn} onClick={this.clickHandler}>
+            View all
+          </Button>
         </div>
         <div className={s.carousel}>
           <LightCarousel

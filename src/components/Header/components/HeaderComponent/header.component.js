@@ -12,6 +12,8 @@ import tinyImage from '../../../../images/tiny_gym1.jpg';
 import { Link } from '../../../Link';
 import { ProgressiveImage } from '../../../ProgressiveImage';
 
+const routes = ['/', '/about', '/our-trainers', '/reviews'];
+
 class HeaderComponent extends PureComponent {
   state = {
     showDrawer: false,
@@ -26,7 +28,7 @@ class HeaderComponent extends PureComponent {
   };
 
   handleChange = (e, i) => {
-    this.props.handleChange(e, i);
+    history.push(routes[i]);
   };
 
   render() {
@@ -56,12 +58,10 @@ class HeaderComponent extends PureComponent {
         >
           <Tab
             label="Home"
-            onClick={() => history.push('/')}
             classes={{ label: `${s.label}`, root: `${s.labelRoot}` }}
           />
           <Tab
             label="About Us"
-            onClick={() => history.push('/about')}
             classes={{ label: `${s.label}`, root: `${s.labelRoot}` }}
           />
           <Tab
@@ -70,7 +70,6 @@ class HeaderComponent extends PureComponent {
           />
           <Tab
             label="Reviews"
-            onClick={() => history.push('/reviews')}
             classes={{ label: `${s.label}`, root: `${s.labelRoot}` }}
           />
           <Tab
@@ -105,7 +104,6 @@ class HeaderComponent extends PureComponent {
 
 HeaderComponent.propTypes = {
   background: PropTypes.string,
-  handleChange: PropTypes.func.isRequired,
   selectedTab: PropTypes.number.isRequired,
 };
 

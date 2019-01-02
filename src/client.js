@@ -12,7 +12,6 @@ import { updateMeta } from './DOMUtils';
 import router from './router';
 
 // Global (context) variables that can be easily accessed from any React component
-// https://facebook.github.io/react/docs/context.html
 const context = {
   // Enables critical path CSS rendering
   // https://github.com/kriasoft/isomorphic-style-loader
@@ -35,7 +34,6 @@ const context = {
     baseUrl: window.App.apiUrl,
   }),
   // Initialize a new Redux store
-  // http://redux.js.org/docs/basics/UsageWithReact.html
   store: configureStore(window.App.state, { history }),
   storeSubscription: null,
 };
@@ -149,7 +147,6 @@ async function onLocationChange(location, action) {
 }
 
 // Handle client-side navigation by using HTML5 History API
-// For more information visit https://github.com/mjackson/history#readme
 history.listen(onLocationChange);
 onLocationChange(currentLocation);
 

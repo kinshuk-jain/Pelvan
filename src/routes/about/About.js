@@ -1,6 +1,5 @@
 /* eslint-disable jsx-a11y/media-has-caption */
 import React from 'react';
-// import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import withStyles from 'isomorphic-style-loader/lib/withStyles';
 import Card from '@material-ui/core/Card';
