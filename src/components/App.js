@@ -12,7 +12,6 @@ const ContextType = {
   // Universal HTTP client
   fetch: PropTypes.func.isRequired,
   // Integrate Redux
-  // http://redux.js.org/docs/basics/UsageWithReact.html
   ...ReduxProvider.childContextTypes,
 };
 
@@ -20,7 +19,6 @@ const ContextType = {
  * The top-level React component setting context (global) variables
  * that can be accessed from all the child components.
  *
- * https://facebook.github.io/react/docs/context.html
  *
  * Usage example:
  *
