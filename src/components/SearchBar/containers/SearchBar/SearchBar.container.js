@@ -118,7 +118,6 @@ class SearchBar extends Component {
         onBlur={this.onBlurHandler}
         onKeyUp={(e) => this.handleChange(e, selectedKey)}
         innerRef={(el) => { this.search = el; }}
-        placeholder="search"
       />
     );
   }

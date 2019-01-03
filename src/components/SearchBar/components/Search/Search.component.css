@@ -4,12 +4,11 @@
   width: 50%;
   padding: 6px 0 0;
   top: 50%;
-  background: var(--CodGray2);
+  background: var(--White);
   display: inline-block;
   position: relative;
   transform: translateY(-50%);
-  border-radius: 2px;
-  border: 1px solid var(--Trout);
+  border-radius: 15px;
 }
 
 .searchBar i {
@@ -25,10 +24,10 @@
 
 .searchBar input {
   width: 95%;
-  font-size: 1.1rem;
+  font-size: 14px;
   font-weight: 400;
   padding: 0 8px 8px 33px;
-  color: var(--Silver);
+  color: var(--Trout);
   border: none;
   background-color: transparent;
 }
@@ -38,15 +37,16 @@
 }
 
 .suggestedSearch {
-  background: var(--CodGray2);
+  background: var(--White);
   position: absolute;
   z-index: 99;
   margin-top: 5px;
-  color: var(--Silver);
+  color: var(--Trout);
   width: 100%;
   left: 0;
   padding: 11px;
-  box-shadow: 0 2px 2px var(--CodGray2);
+  border-radius: 10px;
+  box-shadow: 0 2px 2px var(--Gallery);
 }
 
 .suggestedSearch ul {
@@ -78,12 +78,12 @@
 .searchItem i {
   font-size: 12px;
   text-align: right;
-  color: var(--Jade);
+  color: var(--Smalt);
   vertical-align: top;
 }
 
 .searchItem:hover {
-  background: var(--Black);
+  background: var(--Sail);
 }
 
 .popProd {
@@ -91,11 +91,11 @@
   font-weight: 800;
   line-height: 1;
   padding: 7px 0;
-  color: var(--Jade);
+  color: var(--Smalt);
 }
 
 .active {
-  background: var(--Black);
+  background: var(--Sail);
 }
 
 @media (max-width: 1200px) {

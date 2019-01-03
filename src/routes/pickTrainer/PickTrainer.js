@@ -6,6 +6,7 @@ import withStyles from 'isomorphic-style-loader/lib/withStyles';
 import backgroundImg from '../../images/gym1.jpg';
 import { Footer } from '../../components/Footer';
 import { Header } from '../../components/Header';
+import { SearchBar } from '../../components/SearchBar';
 import data from './data/pickTrainer.data.json';
 
 import s from './PickTrainer.css';
@@ -20,7 +21,9 @@ class PickTrainer extends React.Component {
           defaultTab={2}
           showChooseTrainer={false}
         />
-        <div className={s.container} />
+        <div className={s.container}>
+          <SearchBar />
+        </div>
         <Footer />
       </div>
     );

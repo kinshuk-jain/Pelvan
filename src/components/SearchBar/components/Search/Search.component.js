@@ -112,7 +112,7 @@ Search.propTypes = {
 Search.defaultProps = {
   recentSearches: [],
   searchResults: [],
-  placeholder: 'search',
+  placeholder: 'Search by name, category or region',
 };
 
 export default withStyles(s)(Search);
