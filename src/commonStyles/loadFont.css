@@ -1,5 +1,6 @@
 @font-face {
   font-family: 'kyc';
+  font-display: 'auto';
   src: url('fonts/kyc.woff?iod2cs');
   src:
     url('fonts/kyc.eot?iod2cs#iefix') format('embedded-opentype'),
