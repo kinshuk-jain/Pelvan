@@ -33,7 +33,7 @@ This project sits behind a nginx reverse proxy. It adds support for:
 
 ### Run in production mode locally
 
-```yarn run build --release```
+```yarn run start --release```
 
 
 ### For linting
