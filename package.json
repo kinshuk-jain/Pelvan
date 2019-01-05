@@ -98,7 +98,7 @@
     "postcss-selector-matches": "3.0.1",
     "postcss-selector-not": "3.0.1",
     "prettier": "1.7.4",
-    "ramda": "^0.26.1",
+    "ramda": "0.25.0",
     "raw-loader": "0.5.1",
     "react-deep-force-update": "2.0.1",
     "react-dev-utils": "4.1.0",
@@ -139,14 +139,12 @@
     "test-watch": "yarn run test --watch --notify",
     "test-cover": "yarn run test --coverage",
     "coverage": "yarn run test-cover && opn coverage/lcov-report/index.html",
-    "clean": "babel-node tools/run clean",
-    "copy": "babel-node tools/run copy",
-    "bundle": "babel-node tools/run bundle",
-    "build": "NODE_ENV=production babel-node tools/run build",
-    "build-stats": "yarn run build --release --analyse",
-    "deploy": "cp -R build/* functions/server/ && firebase deploy",
+    "build": "NODE_ENV=production babel-node tools/run build --release",
+    "build:local": "babel-node tools/run build",
+    "build-stats": "yarn run build --analyse",
+    "deploy": "yarn run build && firebase deploy",
     "render": "babel-node tools/run render",
-    "serve": "babel-node tools/run runServer",
-    "start": "babel-node tools/run start --watch"
+    "start": "babel-node tools/run start --watch",
+    "start:prod": "NODE_ENV=production yarn run start --release"
   }
 }
