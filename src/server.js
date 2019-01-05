@@ -55,23 +55,6 @@ global.navigator.userAgent = global.navigator.userAgent || 'all';
 // Register Node.js middleware
 // -----------------------------------------------------------------------------
 
-// function sendGzippedAsset(contentType) {
-//   // eslint-disable-next-line func-names
-//   return function(req, res, next) {
-//     if (__DEV__ || !req.acceptsEncodings('gzip')) return next();
-//     req.url = `${req.url}.gz`;
-//     res.type(contentType);
-//     res.set('Content-Encoding', 'gzip');
-//     return next();
-//   };
-// }
-
-// execute gzip middleware for all static assets
-// app.use('*.js($|\\?*$)', sendGzippedAsset('application/javascript'));
-// app.use('*.css($|\\?*$)', sendGzippedAsset('text/css'));
-// app.use('*.woff($|\\?*$)', sendGzippedAsset('font/woff'));
-// app.use('*.ttf($|\\?*$)', sendGzippedAsset('font/ttf'));
-
 app.use(
   express.static(path.resolve(__dirname, 'public'), {
     maxAge: '1y',

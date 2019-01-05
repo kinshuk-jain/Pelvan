@@ -1,50 +1,59 @@
 Pelvan - A simple project
 
+This project sits behind a nginx reverse proxy. It adds support for:
+- adding Content-Type HTTP header,
+- redirect from http to https
+- communicate over https
+- serve over http /2 if supported by client
+- serve compressed static resources
+
+*D0 NOT add these features in current project as nginx handles these for us.*
+*DO NOT use this app for anything other than serving react app. NO API calls*
+
+### To run service behind nginx
+  - ```nginx start ```
+  - ```yarn run start```
+  - go to https://localhost:4433 in your browser
 
 
-To build with a dev server running -
+### To build with a dev server running -
 
 ```yarn run start```
 
 
-
-To only build -
+### To only build -
 
 ```yarn run build```
 
 
-
-To build for production -
+### To build for production -
 
 ```yarn run build --release```
 
 
-
-Run in production mode -
+### Run in production mode -
 
 ```yarn start -- --release```
 
 
-
-FOr linting -
+### For linting -
 
 ```yarn run lint```
 
 
-
-for deploying -
+### For deploying -
 
 ```yarn run deploy``` (need to edit this script depending on the server)
 
 
 
-for running tests -
+### For running tests -
 
 ```yarn run test```
 
 
 
-Application Structure -
+### Application Structure -
 
 ```
 |-- build: compiled files

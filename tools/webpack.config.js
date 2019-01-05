@@ -3,7 +3,7 @@ import webpack from 'webpack';
 // import HtmlWebpackPlugin from 'html-webpack-plugin';
 import AssetsPlugin from 'assets-webpack-plugin';
 import nodeExternals from 'webpack-node-externals';
-// import CompressionPlugin from 'compression-webpack-plugin';
+import CompressionPlugin from 'compression-webpack-plugin';
 import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
 import overrideRules from './lib/overrideRules';
 import pkg from '../package.json';
@@ -346,7 +346,7 @@ const clientConfig = {
             sourceMap: false,
           }),
 
-          // new CompressionPlugin(),
+          new CompressionPlugin(),
         ]),
 
     // Webpack Bundle Analyzer
