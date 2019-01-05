@@ -16,41 +16,46 @@ This project sits behind a nginx reverse proxy. It adds support for:
   - go to https://localhost:4433 in your browser
 
 
-### To build with a dev server running -
+### To build with a dev server running
 
 ```yarn run start```
 
 
-### To only build -
+### To only build
 
 ```yarn run build```
 
 
-### To build for production -
+### To build for production
 
 ```yarn run build --release```
 
 
-### Run in production mode -
+### Run in production mode locally
 
-```yarn start -- --release```
+```yarn run build --release```
 
 
-### For linting -
+### For linting
 
 ```yarn run lint```
 
 
-### For deploying -
+### For deploying
 
 ```yarn run deploy``` (need to edit this script depending on the server)
 
 
 
-### For running tests -
+### For running tests
 
 ```yarn run test```
 
+
+### Running service on production servers
+ - Setup nginx
+ - Make sure you deploy production build to the server
+ - Run on prod server as `node ./server.js`
 
 
 ### Application Structure -

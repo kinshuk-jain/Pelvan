@@ -18,11 +18,48 @@ import { setRuntimeVariable } from './actions/runtime';
 import config from './config';
 import cached from './cached';
 
+let noAccessStream = false;
+let noServerStream = false;
+const REQUEST_TIMEOUT = 20000;
 const app = express();
 
 //
-// Setup the logger
+// Tell any CSS tooling (such as Material UI) to use all vendor prefixes if the
+// user agent is not known.
 // -----------------------------------------------------------------------------
+global.navigator = global.navigator || {};
+global.navigator.userAgent = global.navigator.userAgent || 'all';
+
+// add a timeout of 20s to every request
+app.use((req, res, next) => {
+  req.setTimeout(REQUEST_TIMEOUT, () => {
+    res.set('Connection', 'Close');
+    next({ code: 408, name: 'Server Timeout', message: 'Request timed out' });
+  });
+  next();
+});
+
+/**
+ * Register Node.js middleware
+ */
+app.use(
+  express.static(path.resolve(__dirname, 'public'), {
+    maxAge: 31536000,
+    etag: false,
+  }),
+);
+
+app.use(cookieParser());
+app.use(bodyParser.urlencoded({ extended: true }));
+// app.use(bodyParser.json());
+
+if (__DEV__) {
+  app.enable('trust proxy');
+}
+
+/**
+ * Setup the logging middleware
+ */
 
 // create a write stream (in append mode)
 const accessLogStream = fs.createWriteStream(
@@ -32,67 +69,34 @@ const accessLogStream = fs.createWriteStream(
   },
 );
 
-// logs all requests to access.log
-app.use(morgan('combined', { stream: accessLogStream }));
-
-// logs only error to console
-app.use(
-  morgan('combined', {
-    skip(req, res) {
-      return res.statusCode < 400;
-    },
-  }),
+const serverCrashLogStream = fs.createWriteStream(
+  path.join(__dirname, 'crash.log'),
+  {
+    flags: 'a',
+  },
 );
 
-//
-// Tell any CSS tooling (such as Material UI) to use all vendor prefixes if the
-// user agent is not known.
-// -----------------------------------------------------------------------------
-global.navigator = global.navigator || {};
-global.navigator.userAgent = global.navigator.userAgent || 'all';
-
-//
-// Register Node.js middleware
-// -----------------------------------------------------------------------------
-
+// log everything to access.log in prod. Can be fed to tools like splunk, data dog, etc
 app.use(
-  express.static(path.resolve(__dirname, 'public'), {
-    maxAge: '1y',
-  }),
+  morgan(
+    'combined',
+    noAccessStream || __DEV__ ? {} : { stream: accessLogStream },
+  ),
 );
 
-app.use(cookieParser());
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(bodyParser.json());
-
-//
-// Authentication
-// -----------------------------------------------------------------------------
-// app.use(
-//   expressJwt({
-//     secret: config.auth.jwt.secret,
-//     credentialsRequired: false,
-//     getToken: req => req.cookies.id_token,
-//   }),
-// );
-// // Error handler for express-jwt
-// app.use((err, req, res, next) => {
-//   // eslint-disable-line no-unused-vars
-//   if (err instanceof Jwt401Error) {
-//     console.error('[express-jwt-error]', req.cookies.id_token);
-//     // `clearCookie`, otherwise user can't use web-app until cookie expires
-//     res.clearCookie('id_token');
-//   }
-//   next(err);
-// });
-
+// if in dev mode, log only errors to console
 if (__DEV__) {
-  app.enable('trust proxy');
+  app.use(
+    morgan('dev', {
+      skip: (req, res) => res.statusCode < 400,
+    }),
+  );
 }
 
-//
-// Register server-side rendering middleware
-// -----------------------------------------------------------------------------
+/**
+ * Register server-side rendering middleware
+ */
+
 app.get('*', async (req, res, next) => {
   try {
     const css = new Set();
@@ -197,18 +201,43 @@ app.use((err, req, res, next) => {
   });
 });
 
-//
-// Launch the server
-// -----------------------------------------------------------------------------
+// when server crashes log before it shuts down
+process.on('uncaughtException', err => {
+  console.error(pe.render(err));
+  // logs all server crashes to crash.log
+  // TODO: Setup nodemailer to send mails when this happens
+  morgan(() => err, noServerStream ? {} : { stream: serverCrashLogStream });
+  process.exit(1);
+});
+
+accessLogStream.on('error', err => {
+  console.error(pe.render(err));
+  // output all logs to console.
+  // TODO: Setup nodemailer to send mails when this happens
+  noAccessStream = true;
+});
+
+serverCrashLogStream.on('error', err => {
+  console.error(pe.render(err));
+  // output all logs to console
+  // TODO: Setup nodemailer to send mails when this happens
+  noServerStream = true;
+});
+
+/**
+ * Launch the server
+ */
+
 if (!module.hot) {
   app.listen(config.port, () => {
     console.info(`The server is running at http://localhost:${config.port}/`);
   });
 }
 
-//
-// Hot Module Replacement
-// -----------------------------------------------------------------------------
+/**
+ * Hot Module Replacement
+ */
+
 if (module.hot) {
   app.hot = module.hot;
   module.hot.accept('./router');
