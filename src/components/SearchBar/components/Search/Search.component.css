@@ -1,7 +1,7 @@
 @import '../../../variables.css';
 
 .searchBar {
-  width: 50%;
+  width: 100%;
   padding: 6px 0 0;
   top: 50%;
   background: var(--White);
@@ -98,7 +98,7 @@
   background: var(--Sail);
 }
 
-@media (max-width: 1200px) {
+/* @media (max-width: 1200px) {
   .searchBar {
     width: 43%;
   }
@@ -108,4 +108,4 @@
   .searchBar {
     width: 40%;
   }
-}
+} */

@@ -1,5 +1,15 @@
 @import '../../components/variables.css';
 
+.searchContainer {
+  position: absolute;
+  width: 600px;
+  top: 90%;
+  height: 54px;
+}
+
 .container {
   position: relative;
+  width: 90%;
+  min-width: var(--max-content-width);
+  margin: 0 auto 50px;
 }

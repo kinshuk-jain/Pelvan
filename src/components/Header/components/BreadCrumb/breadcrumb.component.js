@@ -22,12 +22,13 @@ class BreadCrumbComponent extends Component {
   };
 
   render() {
-    const { data, showChooseTrainer } = this.props;
+    const { data, showChooseTrainer, render } = this.props;
     return (
       <Card classes={{ root: `${s.breadCrumbContainer}` }}>
         <p className={s.subTitle}>{data.subtitle}</p>
         <div className={s.title}>{data.title.toUpperCase()}</div>
         {showChooseTrainer && <ChooseButton />}
+        {render()}
       </Card>
     );
   }
@@ -36,6 +37,7 @@ class BreadCrumbComponent extends Component {
 BreadCrumbComponent.propTypes = {
   showChooseTrainer: PropTypes.bool,
   data: PropTypes.object.isRequired,
+  render: PropTypes.func.isRequired,
 };
 
 export default withStyles(s)(BreadCrumbComponent);
