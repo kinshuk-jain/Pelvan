@@ -7,7 +7,8 @@ import { Header } from '../../components/Header';
 import { Footer } from '../../components/Footer';
 import { CardList } from '../../components/CardList';
 import { ImageBanner } from '../../components/ImageBanner';
-import { OurTrainers, TitleCarousel } from './components';
+import { OurTrainers } from './components';
+import { TitleCarousel } from '../../components/TitleCarousel';
 import { ReviewCard } from '../../components/ReviewCard';
 import data from './data/home.data.json';
 

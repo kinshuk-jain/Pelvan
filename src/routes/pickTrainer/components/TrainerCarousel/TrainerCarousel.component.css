@@ -1,0 +1,6 @@
+@import '../../../../components/variables.css';
+
+.trainerCarousel {
+  width: 100% !important;
+  min-width: 0 !important;
+}

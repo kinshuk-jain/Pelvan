@@ -1,4 +1,4 @@
-import React, { PureComponent } from 'react';
+import React from 'react';
 import withStyles from 'isomorphic-style-loader/lib/withStyles';
 import Grid from '@material-ui/core/Grid';
 import Card from '@material-ui/core/Card';
@@ -36,41 +36,39 @@ ImgCard.propTypes = {
   data: PropTypes.object.isRequired,
 };
 
-class CardListComponent extends PureComponent {
-  render() {
-    const { data } = this.props;
-    return (
-      <Grid container spacing={16} className={s.cardList}>
-        {data.map((info, index) => (
-          <Grid item key={index} xs>
-            <Card classes={{ root: `${s.card}` }}>
-              {info.type === 'header' ? (
-                [
-                  <CardContent
-                    key={1}
-                    classes={{ root: `${s.headerCardContent}` }}
-                  >
-                    <h4>{info.title}</h4>
-                    <p>{info.text}</p>
-                  </CardContent>,
-                  <Divider variant="middle" key={2} />,
-                  <CardActions key={3}>
-                    <Link to="/" className={s.showAll}>
-                      Show All <i className="icon-chevron-right" />
-                    </Link>
-                  </CardActions>,
-                ]
-              ) : (
-                <ImgCard data={info} />
-              )}
-            </Card>
-            {!!info.label && <p className={s.cardLabel}>{info.label}</p>}
-          </Grid>
-        ))}
-      </Grid>
-    );
-  }
-}
+const CardListComponent = props => {
+  const { data } = props;
+  return (
+    <Grid container spacing={16} className={s.cardList}>
+      {data.map((info, index) => (
+        <Grid item key={index} xs>
+          <Card classes={{ root: `${s.card}` }}>
+            {info.type === 'header' ? (
+              [
+                <CardContent
+                  key={1}
+                  classes={{ root: `${s.headerCardContent}` }}
+                >
+                  <h4>{info.title}</h4>
+                  <p>{info.text}</p>
+                </CardContent>,
+                <Divider variant="middle" key={2} />,
+                <CardActions key={3}>
+                  <Link to="/" className={s.showAll}>
+                    Show All <i className="icon-chevron-right" />
+                  </Link>
+                </CardActions>,
+              ]
+            ) : (
+              <ImgCard data={info} />
+            )}
+          </Card>
+          {!!info.label && <p className={s.cardLabel}>{info.label}</p>}
+        </Grid>
+      ))}
+    </Grid>
+  );
+};
 
 CardListComponent.propTypes = {
   data: PropTypes.array.isRequired,

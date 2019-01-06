@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import withStyles from 'isomorphic-style-loader/lib/withStyles';
 import Card from '@material-ui/core/Card';
@@ -16,23 +16,21 @@ const ChooseButton = () => (
   </Button>
 );
 
-class BreadCrumbComponent extends Component {
-  static defaultProps = {
-    showChooseTrainer: true,
-  };
+const BreadCrumbComponent = props => {
+  const { data, showChooseTrainer, render } = props;
+  return (
+    <Card classes={{ root: `${s.breadCrumbContainer}` }}>
+      <p className={s.subTitle}>{data.subtitle}</p>
+      <div className={s.title}>{data.title.toUpperCase()}</div>
+      {showChooseTrainer && <ChooseButton />}
+      {render()}
+    </Card>
+  );
+};
 
-  render() {
-    const { data, showChooseTrainer, render } = this.props;
-    return (
-      <Card classes={{ root: `${s.breadCrumbContainer}` }}>
-        <p className={s.subTitle}>{data.subtitle}</p>
-        <div className={s.title}>{data.title.toUpperCase()}</div>
-        {showChooseTrainer && <ChooseButton />}
-        {render()}
-      </Card>
-    );
-  }
-}
+BreadCrumbComponent.defaultProps = {
+  showChooseTrainer: true,
+};
 
 BreadCrumbComponent.propTypes = {
   showChooseTrainer: PropTypes.bool,
