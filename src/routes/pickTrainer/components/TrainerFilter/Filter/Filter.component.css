@@ -1,0 +1,35 @@
+@import '../../../../../components/variables.css';
+
+.filterSearch {
+  width: 100%;
+  height: 40px;
+  border: none;
+  margin-bottom: 20px;
+  font-size: 12px;
+  color: var(--Boulder);
+  line-height: 1.2;
+  padding: 0 15px;
+  background-color: var(--WildSand);
+}
+
+.filterSearch:focus {
+  outline: none;
+}
+
+.filterContainer {
+  width: 95%;
+  margin: 0 auto;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 20px;
+}
+
+.filterContainer:last-child {
+  border-bottom: none;
+}
+
+.filterTitle {
+  font-size: 1.2rem;
+  color: var(--MineShaft);
+  font-weight: 500;
+  padding: 17px 5px 17px 0;
+}

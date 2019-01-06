@@ -1,3 +1,5 @@
+/* eslint-disable react/no-did-mount-set-state */
+/* eslint-disable no-return-assign */
 import React from 'react';
 import PropTypes from 'prop-types';
 // import classnames from 'classnames';
@@ -19,6 +21,10 @@ const Search = () => (
 );
 
 class PickTrainerPage extends React.Component {
+  state = {
+    stickyTop: 0,
+  };
+
   renderGridView() {
     const { filter } = this.props;
     return (
@@ -29,6 +35,14 @@ class PickTrainerPage extends React.Component {
     );
   }
 
+  componentDidMount() {
+    if (this.filterContainer) {
+      this.setState({
+        stickyTop: this.filterContainer.scrollHeight - window.innerHeight,
+      });
+    }
+  }
+
   renderCarouselView(data) {
     return get(data, 'categories', []).map((category, i) => (
       <TrainerCarousel data={category} key={i} />
@@ -36,7 +50,8 @@ class PickTrainerPage extends React.Component {
   }
 
   render() {
-    const { data } = this.props;
+    const { data, refToTrainerContainer } = this.props;
+    const { stickyTop } = this.state;
     return (
       <div>
         <Header
@@ -47,10 +62,16 @@ class PickTrainerPage extends React.Component {
           render={Search}
         />
         <div className={s.container}>
-          <div className={s.filterContainer}>
-            <TrainerFilter />
+          <div
+            style={{
+              top: `-${stickyTop}px`,
+            }}
+            className={s.filterContainer}
+            ref={el => (this.filterContainer = el)}
+          >
+            <TrainerFilter data={get(data, 'filters', [])} />
           </div>
-          <div className={s.trainerCarousel}>
+          <div className={s.trainerCarousel} ref={refToTrainerContainer}>
             {this.renderCarouselView(data)}
           </div>
         </div>
@@ -63,6 +84,11 @@ class PickTrainerPage extends React.Component {
 PickTrainerPage.propTypes = {
   data: PropTypes.object.isRequired,
   filter: PropTypes.bool.isRequired,
+  refToTrainerContainer: PropTypes.func,
+};
+
+PickTrainerPage.defaultProps = {
+  refToTrainerContainer: () => {},
 };
 
 export default withStyles(s)(PickTrainerPage);

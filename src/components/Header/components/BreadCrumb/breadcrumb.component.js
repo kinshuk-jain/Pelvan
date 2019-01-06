@@ -10,6 +10,7 @@ const ChooseButton = () => (
   <Button
     variant="contained"
     classes={{ root: `${s.headerBtn}` }}
+    href="/our-trainers"
     disableRipple
   >
     Choose a Trainer

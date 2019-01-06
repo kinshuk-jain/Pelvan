@@ -20,11 +20,19 @@
   vertical-align: top;
   position: sticky;
   top: -4px;
+  margin-top: 30px;
 }
 
 .trainerCarousel {
-  margin: 10px auto;
+  margin: 0 auto;
   width: 76%;
   min-width: 0;
+  padding-left: 15px;
   display: inline-block;
+}
+
+@media screen and (max-width: 1024px) {
+  .filterContainer {
+    display: none;
+  }
 }
