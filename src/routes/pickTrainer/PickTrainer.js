@@ -1,22 +1,22 @@
+/* eslint-disable react/no-did-mount-set-state */
+/* eslint-disable no-restricted-globals */
 /* eslint-disable no-return-assign */
 import React from 'react';
 import debounce from 'lodash/debounce';
-
+import { parse } from 'query-string';
 import mockData from './data/pickTrainer.data.json';
 import { addRemoveScrollEventListener } from '../../core/utils';
 import { PickTrainerPage } from './components';
 
-// TODO: Grid view when filter is selected or present in query string. Carousel view when all filters are removed
-// Preselect Filter that is already present in query string
-// show loading gif
-// trainer card
+// TODO: Style Grid View
+// TODO: TrainerCard component
 
 const INFINITE_SCROLL_OFFSET = 200;
 
 class PickTrainer extends React.Component {
   state = {
     // when applied, show sort by and show only filtered results
-    filter: false,
+    filter: {},
     data: mockData,
   };
 
@@ -39,6 +39,23 @@ class PickTrainer extends React.Component {
   }, 200);
 
   componentDidMount() {
+    const qs = parse(location.search);
+    const { data } = this.state;
+    Object.keys(qs).forEach(key => {
+      if (
+        !data.filters.some(
+          elem => elem.name.toLowerCase() === key.toLowerCase(),
+        )
+      ) {
+        // delete all keys not valid filters
+        delete qs[key];
+      }
+    });
+
+    this.setState({
+      filter: qs || {},
+    });
+
     addRemoveScrollEventListener(this.scrollListener);
   }
 

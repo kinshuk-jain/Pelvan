@@ -95,3 +95,7 @@ This will generate HTML file for all routes in the app. Useful to see what each 
 |   |   |-- [route]: route name. Ex for http://app.com/home. This will be `home`
 
 ```
+
+### TODOS
+
+- Add loading spinner

@@ -2,10 +2,12 @@
 /* eslint-disable no-return-assign */
 import React from 'react';
 import PropTypes from 'prop-types';
-// import classnames from 'classnames';
 import get from 'lodash/get';
+import isEmpty from 'lodash/isEmpty';
 import withStyles from 'isomorphic-style-loader/lib/withStyles';
 // import Card from '@material-ui/core/Card';
+// import classnames from 'classnames';
+
 import backgroundImg from '../../../../images/gym1.jpg';
 import { Footer } from '../../../../components/Footer';
 import { Header } from '../../../../components/Header';
@@ -25,12 +27,13 @@ class PickTrainerPage extends React.Component {
     stickyTop: 0,
   };
 
-  renderGridView() {
+  renderGridView(data) {
     const { filter } = this.props;
     return (
       <div>
         Header
         {filter && 'Sort By'}
+        {JSON.stringify(data)}
       </div>
     );
   }
@@ -50,7 +53,7 @@ class PickTrainerPage extends React.Component {
   }
 
   render() {
-    const { data, refToTrainerContainer } = this.props;
+    const { data, refToTrainerContainer, filter } = this.props;
     const { stickyTop } = this.state;
     return (
       <div>
@@ -69,10 +72,12 @@ class PickTrainerPage extends React.Component {
             className={s.filterContainer}
             ref={el => (this.filterContainer = el)}
           >
-            <TrainerFilter data={get(data, 'filters', [])} />
+            <TrainerFilter preselect={filter} data={get(data, 'filters', [])} />
           </div>
           <div className={s.trainerCarousel} ref={refToTrainerContainer}>
-            {this.renderCarouselView(data)}
+            {isEmpty(filter)
+              ? this.renderCarouselView(data)
+              : this.renderGridView(data)}
           </div>
         </div>
         <Footer />
@@ -83,7 +88,7 @@ class PickTrainerPage extends React.Component {
 
 PickTrainerPage.propTypes = {
   data: PropTypes.object.isRequired,
-  filter: PropTypes.bool.isRequired,
+  filter: PropTypes.object.isRequired,
   refToTrainerContainer: PropTypes.func,
 };
 

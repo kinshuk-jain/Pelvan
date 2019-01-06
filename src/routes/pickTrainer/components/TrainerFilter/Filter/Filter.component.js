@@ -29,6 +29,7 @@ class Filter extends React.PureComponent {
 
   render() {
     const { data } = this.state;
+    const { preselect } = this.props;
     return (
       <div className={s.filterContainer}>
         <div className={s.filterTitle}>{data.name}</div>
@@ -40,7 +41,12 @@ class Filter extends React.PureComponent {
         />
         {data.options.map((option, ind) => (
           <div key={ind}>
-            <input type="checkbox" id={option} name={option} />
+            <input
+              type="checkbox"
+              id={option}
+              name={option}
+              checked={preselect.includes(option.toString().toLowerCase())}
+            />
             <label htmlFor={option}>{option}</label>
           </div>
         ))}
@@ -49,8 +55,16 @@ class Filter extends React.PureComponent {
   }
 }
 
+Filter.defaultProps = {
+  preselect: '',
+};
+
 Filter.propTypes = {
   data: PropTypes.object.isRequired,
+  preselect: PropTypes.oneOfType([
+    PropTypes.arrayOf(PropTypes.string),
+    PropTypes.string,
+  ]),
 };
 
 export default withStyles(s)(Filter);
