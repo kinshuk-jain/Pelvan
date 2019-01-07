@@ -5,8 +5,6 @@ import PropTypes from 'prop-types';
 import get from 'lodash/get';
 import isEmpty from 'lodash/isEmpty';
 import withStyles from 'isomorphic-style-loader/lib/withStyles';
-// import Card from '@material-ui/core/Card';
-// import classnames from 'classnames';
 
 import backgroundImg from '../../../../images/gym1.jpg';
 import { Footer } from '../../../../components/Footer';

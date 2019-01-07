@@ -27,6 +27,7 @@
           "name": "Victoria",
           "id": "123",
           "image": "",
+          "video": "",
           "rating": 4,
           "ratedBy": 45,
           "topReviews": [
@@ -51,6 +52,7 @@
         {
           "name": "Victoria",
           "id": "123",
+          "video": "",
           "image": "",
           "rating": 4,
           "ratedBy": 45,
@@ -76,6 +78,7 @@
         {
           "name": "Victoria",
           "id": "123",
+          "video": "",
           "image": "",
           "rating": 4,
           "ratedBy": 45,
@@ -101,6 +104,7 @@
         {
           "name": "Victoria",
           "id": "123",
+          "video": "",
           "image": "",
           "rating": 4,
           "ratedBy": 45,
@@ -126,6 +130,7 @@
         {
           "name": "Victoria",
           "id": "123",
+          "video": "",
           "image": "",
           "rating": 4,
           "ratedBy": 45,
@@ -156,6 +161,111 @@
         {
           "name": "Victoria",
           "id": "123",
+          "video": "",
+          "image": "",
+          "rating": 4,
+          "ratedBy": 45,
+          "topReviews": [
+            {
+              "rating": 3,
+              "name": "Johny Lobson",
+              "thumbnail": "",
+              "title": "Very good",
+              "comment": "I used her services"
+            },
+            {
+              "rating": 3,
+              "name": "Johny Lobson",
+              "thumbnail": "",
+              "title": "Very good",
+              "comment": "I used her services"
+            }
+          ],
+          "description":
+            "$ years of experience in kickboxing, Victoria is best suited to help you"
+        },
+        {
+          "name": "Victoria",
+          "id": "123",
+          "video": "",
+          "image": "",
+          "rating": 4,
+          "ratedBy": 45,
+          "topReviews": [
+            {
+              "rating": 3,
+              "name": "Johny Lobson",
+              "thumbnail": "",
+              "title": "Very good",
+              "comment": "I used her services"
+            },
+            {
+              "rating": 3,
+              "name": "Johny Lobson",
+              "thumbnail": "",
+              "title": "Very good",
+              "comment": "I used her services"
+            }
+          ],
+          "description":
+            "$ years of experience in kickboxing, Victoria is best suited to help you"
+        },
+        {
+          "name": "Victoria",
+          "id": "123",
+          "video": "",
+          "image": "",
+          "rating": 4,
+          "ratedBy": 45,
+          "topReviews": [
+            {
+              "rating": 3,
+              "name": "Johny Lobson",
+              "thumbnail": "",
+              "title": "Very good",
+              "comment": "I used her services"
+            },
+            {
+              "rating": 3,
+              "name": "Johny Lobson",
+              "thumbnail": "",
+              "title": "Very good",
+              "comment": "I used her services"
+            }
+          ],
+          "description":
+            "$ years of experience in kickboxing, Victoria is best suited to help you"
+        },
+        {
+          "name": "Victoria",
+          "id": "123",
+          "video": "",
+          "image": "",
+          "rating": 4,
+          "ratedBy": 45,
+          "topReviews": [
+            {
+              "rating": 3,
+              "name": "Johny Lobson",
+              "thumbnail": "",
+              "title": "Very good",
+              "comment": "I used her services"
+            },
+            {
+              "rating": 3,
+              "name": "Johny Lobson",
+              "thumbnail": "",
+              "title": "Very good",
+              "comment": "I used her services"
+            }
+          ],
+          "description":
+            "$ years of experience in kickboxing, Victoria is best suited to help you"
+        },
+        {
+          "name": "Victoria",
+          "id": "123",
+          "video": "",
           "image": "",
           "rating": 4,
           "ratedBy": 45,
@@ -182,106 +292,7 @@
           "name": "Victoria",
           "id": "123",
           "image": "",
-          "rating": 4,
-          "ratedBy": 45,
-          "topReviews": [
-            {
-              "rating": 3,
-              "name": "Johny Lobson",
-              "thumbnail": "",
-              "title": "Very good",
-              "comment": "I used her services"
-            },
-            {
-              "rating": 3,
-              "name": "Johny Lobson",
-              "thumbnail": "",
-              "title": "Very good",
-              "comment": "I used her services"
-            }
-          ],
-          "description":
-            "$ years of experience in kickboxing, Victoria is best suited to help you"
-        },
-        {
-          "name": "Victoria",
-          "id": "123",
-          "image": "",
-          "rating": 4,
-          "ratedBy": 45,
-          "topReviews": [
-            {
-              "rating": 3,
-              "name": "Johny Lobson",
-              "thumbnail": "",
-              "title": "Very good",
-              "comment": "I used her services"
-            },
-            {
-              "rating": 3,
-              "name": "Johny Lobson",
-              "thumbnail": "",
-              "title": "Very good",
-              "comment": "I used her services"
-            }
-          ],
-          "description":
-            "$ years of experience in kickboxing, Victoria is best suited to help you"
-        },
-        {
-          "name": "Victoria",
-          "id": "123",
-          "image": "",
-          "rating": 4,
-          "ratedBy": 45,
-          "topReviews": [
-            {
-              "rating": 3,
-              "name": "Johny Lobson",
-              "thumbnail": "",
-              "title": "Very good",
-              "comment": "I used her services"
-            },
-            {
-              "rating": 3,
-              "name": "Johny Lobson",
-              "thumbnail": "",
-              "title": "Very good",
-              "comment": "I used her services"
-            }
-          ],
-          "description":
-            "$ years of experience in kickboxing, Victoria is best suited to help you"
-        },
-        {
-          "name": "Victoria",
-          "id": "123",
-          "image": "",
-          "rating": 4,
-          "ratedBy": 45,
-          "topReviews": [
-            {
-              "rating": 3,
-              "name": "Johny Lobson",
-              "thumbnail": "",
-              "title": "Very good",
-              "comment": "I used her services"
-            },
-            {
-              "rating": 3,
-              "name": "Johny Lobson",
-              "thumbnail": "",
-              "title": "Very good",
-              "comment": "I used her services"
-            }
-          ],
-          "description":
-            "$ years of experience in kickboxing, Victoria is best suited to help you"
-        },
-        {
-          "name": "Victoria",
-          "id": "123",
-          "image": "",
+          "video": "",
           "rating": 4,
           "ratedBy": 45,
           "topReviews": [
@@ -311,6 +322,7 @@
         {
           "name": "Victoria",
           "id": "123",
+          "video": "",
           "image": "",
           "rating": 4,
           "ratedBy": 45,
@@ -337,6 +349,7 @@
           "name": "Victoria",
           "id": "123",
           "image": "",
+          "video": "",
           "rating": 4,
           "ratedBy": 45,
           "topReviews": [
@@ -362,6 +375,7 @@
           "name": "Victoria",
           "id": "123",
           "image": "",
+          "video": "",
           "rating": 4,
           "ratedBy": 45,
           "topReviews": [
@@ -386,6 +400,7 @@
         {
           "name": "Victoria",
           "id": "123",
+          "video": "",
           "image": "",
           "rating": 4,
           "ratedBy": 45,
@@ -411,6 +426,7 @@
         {
           "name": "Victoria",
           "id": "123",
+          "video": "",
           "image": "",
           "rating": 4,
           "ratedBy": 45,
@@ -436,6 +452,7 @@
         {
           "name": "Victoria",
           "id": "123",
+          "video": "",
           "image": "",
           "rating": 4,
           "ratedBy": 45,
@@ -466,6 +483,33 @@
         {
           "name": "Victoria",
           "id": "123",
+          "video": "",
+          "image": "",
+          "rating": 4,
+          "ratedBy": 45,
+          "topReviews": [
+            {
+              "rating": 3,
+              "name": "Johny Lobson",
+              "thumbnail": "",
+              "title": "Very good",
+              "comment": "I used her services"
+            },
+            {
+              "rating": 3,
+              "name": "Johny Lobson",
+              "thumbnail": "",
+              "title": "Very good",
+              "comment": "I used her services"
+            }
+          ],
+          "description":
+            "$ years of experience in kickboxing, Victoria is best suited to help you"
+        },
+        {
+          "name": "Victoria",
+          "id": "123",
+          "video": "",
           "image": "",
           "rating": 4,
           "ratedBy": 45,
@@ -492,6 +536,7 @@
           "name": "Victoria",
           "id": "123",
           "image": "",
+          "video": "",
           "rating": 4,
           "ratedBy": 45,
           "topReviews": [
@@ -516,6 +561,33 @@
         {
           "name": "Victoria",
           "id": "123",
+          "video": "",
+          "image": "",
+          "rating": 4,
+          "ratedBy": 45,
+          "topReviews": [
+            {
+              "rating": 3,
+              "name": "Johny Lobson",
+              "thumbnail": "",
+              "title": "Very good",
+              "comment": "I used her services"
+            },
+            {
+              "rating": 3,
+              "name": "Johny Lobson",
+              "thumbnail": "",
+              "title": "Very good",
+              "comment": "I used her services"
+            }
+          ],
+          "description":
+            "$ years of experience in kickboxing, Victoria is best suited to help you"
+        },
+        {
+          "name": "Victoria",
+          "id": "123",
+          "video": "",
           "image": "",
           "rating": 4,
           "ratedBy": 45,
@@ -542,56 +614,7 @@
           "name": "Victoria",
           "id": "123",
           "image": "",
-          "rating": 4,
-          "ratedBy": 45,
-          "topReviews": [
-            {
-              "rating": 3,
-              "name": "Johny Lobson",
-              "thumbnail": "",
-              "title": "Very good",
-              "comment": "I used her services"
-            },
-            {
-              "rating": 3,
-              "name": "Johny Lobson",
-              "thumbnail": "",
-              "title": "Very good",
-              "comment": "I used her services"
-            }
-          ],
-          "description":
-            "$ years of experience in kickboxing, Victoria is best suited to help you"
-        },
-        {
-          "name": "Victoria",
-          "id": "123",
-          "image": "",
-          "rating": 4,
-          "ratedBy": 45,
-          "topReviews": [
-            {
-              "rating": 3,
-              "name": "Johny Lobson",
-              "thumbnail": "",
-              "title": "Very good",
-              "comment": "I used her services"
-            },
-            {
-              "rating": 3,
-              "name": "Johny Lobson",
-              "thumbnail": "",
-              "title": "Very good",
-              "comment": "I used her services"
-            }
-          ],
-          "description":
-            "$ years of experience in kickboxing, Victoria is best suited to help you"
-        },
-        {
-          "name": "Victoria",
-          "id": "123",
-          "image": "",
+          "video": "",
           "rating": 4,
           "ratedBy": 45,
           "topReviews": [

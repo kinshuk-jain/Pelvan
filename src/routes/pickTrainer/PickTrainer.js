@@ -8,7 +8,6 @@ import mockData from './data/pickTrainer.data.json';
 import { addRemoveScrollEventListener } from '../../core/utils';
 import { PickTrainerPage } from './components';
 
-// TODO: Style Grid View
 // TODO: TrainerCard component
 
 const INFINITE_SCROLL_OFFSET = 200;
