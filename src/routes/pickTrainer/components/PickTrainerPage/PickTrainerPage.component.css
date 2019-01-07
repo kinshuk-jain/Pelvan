@@ -4,7 +4,6 @@
   position: absolute;
   width: 600px;
   top: 90%;
-  height: 54px;
 }
 
 .container {
@@ -34,5 +33,9 @@
 @media screen and (max-width: 1024px) {
   .filterContainer {
     display: none;
+  }
+
+  .trainerCarousel {
+    width: 95%;
   }
 }

@@ -3,7 +3,7 @@
   left: 0;
   top: 0;
   will-change: transform, opacity;
-  animation: progressiveReveal 1s ease-out;
+  animation: progressiveReveal 0.5s ease-out;
 }
 
 @keyframes progressiveReveal {

@@ -3,23 +3,23 @@
   "title": "Our Trainers",
   "filters": [
     {
-      "name": "Category",
+      "name": "category",
       "options": ["kickboxing", "kinboxing", "strength", "yoga"]
     },
     {
-      "name": "Area",
+      "name": "area",
       "options": ["berlin", "amsterdam", "hamburg", "budapest"]
     },
     {
-      "name": "Rating",
+      "name": "rating",
       "options": [1, 2, 3, 4, 5]
     },
     {
-      "name": "Experience",
+      "name": "experience",
       "options": ["1 year +", "2 year +", "3 year +"]
     }
   ],
-  "categories": [
+  "results": [
     {
       "category": "Popular Trainers",
       "list": [

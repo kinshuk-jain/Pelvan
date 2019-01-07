@@ -27,6 +27,18 @@ class Filter extends React.PureComponent {
     });
   };
 
+  handleOnChange = (e, name, option) => {
+    this.props.onFilterUpdate(name, option, !e.target.checked);
+  };
+
+  includesCaseInsensitive = (key, aggregate) => {
+    const newKey = key.toString().toLowerCase();
+    if (Array.isArray(aggregate)) {
+      return aggregate.some(value => value.toString().toLowerCase() === newKey);
+    }
+    return newKey === aggregate.toString().toLowerCase();
+  };
+
   render() {
     const { data } = this.state;
     const { preselect } = this.props;
@@ -45,7 +57,8 @@ class Filter extends React.PureComponent {
               type="checkbox"
               id={option}
               name={option}
-              checked={preselect.includes(option.toString().toLowerCase())}
+              defaultChecked={this.includesCaseInsensitive(option, preselect)}
+              onClick={e => this.handleOnChange(e, data.name, option)}
             />
             <label htmlFor={option}>{option}</label>
           </div>
@@ -65,6 +78,7 @@ Filter.propTypes = {
     PropTypes.arrayOf(PropTypes.string),
     PropTypes.string,
   ]),
+  onFilterUpdate: PropTypes.func.isRequired,
 };
 
 export default withStyles(s)(Filter);

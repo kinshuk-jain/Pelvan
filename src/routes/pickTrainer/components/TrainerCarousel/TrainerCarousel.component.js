@@ -12,7 +12,7 @@ const TrainerCarousel = props => {
   return category && !isEmpty(list) ? (
     <TitleCarousel
       title={category}
-      link={`/our-trainers?category=${category}`}
+      href={`/our-trainers?category=${category}`}
       className={s.trainerCarousel}
       slidesToShow={4}
     >

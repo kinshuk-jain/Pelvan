@@ -3,7 +3,7 @@
 /* eslint-disable no-return-assign */
 import React from 'react';
 import debounce from 'lodash/debounce';
-import { parse } from 'query-string';
+import { parse, stringify } from 'query-string';
 import mockData from './data/pickTrainer.data.json';
 import { addRemoveScrollEventListener } from '../../core/utils';
 import { PickTrainerPage } from './components';
@@ -28,11 +28,11 @@ class PickTrainer extends React.Component {
       this.scrollPosition >
         this.refToTrainerContainer.scrollHeight - INFINITE_SCROLL_OFFSET
     ) {
-      // fetch more data, infinite scroll
+      // TODO: fetch more data with currently applied filters
       this.setState(state => ({
         data: {
           ...state.data,
-          categories: state.data.categories.concat(mockData.categories),
+          results: state.data.results.concat(mockData.results),
         },
       }));
     }
@@ -51,7 +51,7 @@ class PickTrainer extends React.Component {
         delete qs[key];
       }
     });
-
+    // TODO: fetch data with applied filters
     this.setState({
       filter: qs || {},
     });
@@ -63,11 +63,36 @@ class PickTrainer extends React.Component {
     addRemoveScrollEventListener(this.scrollListener, true);
   }
 
-  onFilterToggle() {
+  onFilterUpdate = (name, option, removeFilter = false) => {
+    const { filter } = this.state;
+    const filterName = filter[name];
+
+    // adding a filter
+    if (filterName) {
+      // filter already exists
+      filter[name] = [option].concat(filterName);
+    } else {
+      filter[name] = option;
+    }
+
+    // removing a filter
+    if (filterName && removeFilter) {
+      // if filter is an array
+      if (Array.isArray(filterName)) {
+        filterName.splice(filterName.indexOf(option), 1);
+      } else {
+        delete filter[name];
+      }
+    }
+
+    // change query string in url
+    history.pushState(filter, 'our-trainers', `?${stringify(filter)}`);
+
+    // TODO: fetch data with new filters
     this.setState({
-      filter: true,
+      filter,
     });
-  }
+  };
 
   render() {
     const { filter, data } = this.state;
@@ -75,6 +100,7 @@ class PickTrainer extends React.Component {
       <PickTrainerPage
         data={data}
         filter={filter}
+        onFilterUpdate={this.onFilterUpdate}
         refToTrainerContainer={el => (this.refToTrainerContainer = el)}
       />
     );

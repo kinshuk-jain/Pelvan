@@ -9,7 +9,7 @@ import s from './TrainerFilter.component.css';
 
 class TrainerFilter extends React.PureComponent {
   render() {
-    const { className, data, preselect } = this.props;
+    const { className, data, preselect, onFilterUpdate } = this.props;
     return (
       <div className={classNames(s.container, className)}>
         {data.map((filter, i) => (
@@ -17,6 +17,7 @@ class TrainerFilter extends React.PureComponent {
             data={filter}
             key={i}
             preselect={preselect[get(filter, 'name', '').toLowerCase()]}
+            onFilterUpdate={onFilterUpdate}
           />
         ))}
       </div>
@@ -33,6 +34,7 @@ TrainerFilter.propTypes = {
   className: PropTypes.string,
   data: PropTypes.array.isRequired,
   preselect: PropTypes.object,
+  onFilterUpdate: PropTypes.func.isRequired,
 };
 
 export default withStyles(s)(TrainerFilter);

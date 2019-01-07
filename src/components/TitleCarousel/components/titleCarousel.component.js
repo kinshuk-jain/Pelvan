@@ -9,14 +9,28 @@ import history from '../../../history';
 import s from './titleCarousel.component.css';
 
 const Back = () => <i className="icon-chevron-left" />;
-const Next = () => <i className="icon-chevron-right" />;
+const Next = () => (
+  <i className="icon-chevron-right" style={{ paddingLeft: '8px' }} />
+);
 
 const TitleCarousel = props => {
-  const { title, link, children, className, slidesToShow, ...options } = props;
+  const {
+    title,
+    link,
+    children,
+    className,
+    slidesToShow,
+    href,
+    ...options
+  } = props;
   return (
     <div className={classNames(s.carousel, className)}>
       <div className={s.title}>{title}</div>
-      <Button className={s.btn} onClick={() => history.push(link)}>
+      <Button
+        className={s.btn}
+        href={href}
+        onClick={href || !link ? () => {} : () => history.push(link)}
+      >
         View All
       </Button>
       <LightCarousel
@@ -35,14 +49,17 @@ const TitleCarousel = props => {
 
 TitleCarousel.propTypes = {
   title: PropTypes.string.isRequired,
-  link: PropTypes.string.isRequired,
+  link: PropTypes.string,
   className: PropTypes.string,
   slidesToShow: PropTypes.number,
+  href: PropTypes.string,
 };
 
 TitleCarousel.defaultProps = {
   className: '',
   slidesToShow: 2,
+  href: '',
+  link: '',
 };
 
 export default withStyles(s)(TitleCarousel);

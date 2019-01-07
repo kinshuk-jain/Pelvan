@@ -12,7 +12,7 @@ import backgroundImg from '../../../../images/gym1.jpg';
 import { Footer } from '../../../../components/Footer';
 import { Header } from '../../../../components/Header';
 import { SearchBar } from '../../../../components/SearchBar';
-import { TrainerCarousel, TrainerFilter } from '../index';
+import { TrainerCarousel, TrainerFilter, TrainerCard } from '../index';
 
 import s from './PickTrainerPage.component.css';
 
@@ -29,11 +29,20 @@ class PickTrainerPage extends React.Component {
 
   renderGridView(data) {
     const { filter } = this.props;
+    const results = get(data, 'results', []);
+    const category = get(results[0], 'category', '');
     return (
       <div>
-        Header
-        {filter && 'Sort By'}
-        {JSON.stringify(data)}
+        {category}
+        {!isEmpty(filter) && 'Sort By'}
+        {results.map(trainerList => {
+          if (!isEmpty(trainerList) && trainerList.category === category) {
+            return get(trainerList, 'list', []).map((trainer, i) => (
+              <TrainerCard key={i} data={trainer} />
+            ));
+          }
+          return null;
+        })}
       </div>
     );
   }
@@ -47,13 +56,13 @@ class PickTrainerPage extends React.Component {
   }
 
   renderCarouselView(data) {
-    return get(data, 'categories', []).map((category, i) => (
+    return get(data, 'results', []).map((category, i) => (
       <TrainerCarousel data={category} key={i} />
     ));
   }
 
   render() {
-    const { data, refToTrainerContainer, filter } = this.props;
+    const { data, refToTrainerContainer, filter, onFilterUpdate } = this.props;
     const { stickyTop } = this.state;
     return (
       <div>
@@ -72,7 +81,11 @@ class PickTrainerPage extends React.Component {
             className={s.filterContainer}
             ref={el => (this.filterContainer = el)}
           >
-            <TrainerFilter preselect={filter} data={get(data, 'filters', [])} />
+            <TrainerFilter
+              onFilterUpdate={onFilterUpdate}
+              preselect={filter}
+              data={get(data, 'filters', [])}
+            />
           </div>
           <div className={s.trainerCarousel} ref={refToTrainerContainer}>
             {isEmpty(filter)
@@ -90,6 +103,7 @@ PickTrainerPage.propTypes = {
   data: PropTypes.object.isRequired,
   filter: PropTypes.object.isRequired,
   refToTrainerContainer: PropTypes.func,
+  onFilterUpdate: PropTypes.func.isRequired,
 };
 
 PickTrainerPage.defaultProps = {
