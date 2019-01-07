@@ -30,6 +30,19 @@
   display: inline-block;
 }
 
+.grid {
+  background: var(--White);
+  margin-top: 40px;
+  border-radius: 10px;
+  padding-left: 8px;
+}
+
+.gridItem {
+  width: 33%;
+  padding: 5px;
+  display: inline-block;
+}
+
 @media screen and (max-width: 1024px) {
   .filterContainer {
     display: none;

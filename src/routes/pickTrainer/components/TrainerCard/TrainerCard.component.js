@@ -11,6 +11,7 @@ import s from './TrainerCard.component.css';
 const TrainerCard = ({ data }) => (
   <div>
     <ProgressiveImage
+      className={s.image}
       tinyImage={tinyTrainerImg}
       src={trainerImg}
       alt={data.name}

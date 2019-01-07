@@ -32,13 +32,17 @@ class PickTrainerPage extends React.Component {
     const results = get(data, 'results', []);
     const category = get(results[0], 'category', '');
     return (
-      <div>
-        {category}
-        {!isEmpty(filter) && 'Sort By'}
+      <div className={s.grid}>
+        <div>
+          {category}
+          {!isEmpty(filter) && 'Sort By'}
+        </div>
         {results.map(trainerList => {
           if (!isEmpty(trainerList) && trainerList.category === category) {
             return get(trainerList, 'list', []).map((trainer, i) => (
-              <TrainerCard key={i} data={trainer} />
+              <div className={s.gridItem}>
+                <TrainerCard key={i} data={trainer} />
+              </div>
             ));
           }
           return null;
