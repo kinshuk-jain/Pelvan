@@ -1,25 +1,26 @@
 import path from 'path';
 import fetch from 'node-fetch';
 import { spawn } from './lib/cp';
-import { makeDir, moveDir, cleanDir } from './lib/fs';
-import run from './run';
+import { makeDir } from './lib/fs';
+// import { moveDir, cleanDir } from './lib/fs';
+// import run from './run';
 
-// GitHub Pages
-const remote = {
-  name: 'github',
-  url: 'https://github.com/<user>/<repo>.git',
-  branch: 'gh-pages',
-  website: 'https://<user>.github.io/<repo>/',
-  static: true,
-};
+// // GitHub Pages
+// const remote = {
+//   name: 'github',
+//   url: 'https://github.com/<user>/<repo>.git',
+//   branch: 'gh-pages',
+//   website: 'https://<user>.github.io/<repo>/',
+//   static: true,
+// };
 
 // Heroku
-// const remote = {
-//   name: 'heroku',
-//   url: 'https://git.heroku.com/<app>.git',
-//   branch: 'master',
-//   website: 'https://<app>.herokuapp.com',
-// };
+const remote = {
+  name: 'pelvan',
+  url: 'https://git.heroku.com/pelvan.git',
+  branch: 'master',
+  website: 'https://pelvan.herokuapp.com',
+};
 
 // Azure Web Apps
 // const remote = {
@@ -82,19 +83,19 @@ async function deploy() {
     await spawn('git', ['clean', '--force'], options);
   }
 
-  // Build the project in RELEASE mode which
-  // generates optimized and minimized bundles
-  process.argv.push('--release');
-  if (remote.static) process.argv.push('--static');
-  await run(require('./build').default); // eslint-disable-line global-require
-  if (process.argv.includes('--static')) {
-    await cleanDir('build/*', {
-      nosort: true,
-      dot: true,
-      ignore: ['build/.git', 'build/public'],
-    });
-    await moveDir('build/public', 'build');
-  }
+  // // Build the project in RELEASE mode which
+  // // generates optimized and minimized bundles
+  // process.argv.push('--release');
+  // if (remote.static) process.argv.push('--static');
+  // await run(require('./build').default); // eslint-disable-line global-require
+  // if (process.argv.includes('--static')) {
+  //   await cleanDir('build/*', {
+  //     nosort: true,
+  //     dot: true,
+  //     ignore: ['build/.git', 'build/public'],
+  //   });
+  //   await moveDir('build/public', 'build');
+  // }
 
   // Push the contents of the build folder to the remote server via Git
   await spawn('git', ['add', '.', '--all'], options);

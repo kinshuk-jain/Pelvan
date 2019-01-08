@@ -9529,7 +9529,7 @@ react-light-carousel@1.2.1:
   resolved "https://registry.yarnpkg.com/react-light-carousel/-/react-light-carousel-1.2.1.tgz#b80db69e97215f3bec1c2435a47ed7fb55481de6"
   integrity sha512-ncF4c4UnTf9lSzcijBOR8C2JgRM7PDBM0/NzQsUtM7YJGUo9zi1TmmLN9xmwMo85OL2g2JmCFx3ZiTRWu6lh1Q==
 
-react-loading-overlay@^1.0.1:
+react-loading-overlay@1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/react-loading-overlay/-/react-loading-overlay-1.0.1.tgz#ee3b1ad56c45bb2f1ba46d4820ba0d06cd319a91"
   integrity sha512-aUjtZ8tNXBSx+MbD2SQs0boPbeTAGTh+I5U9nWjDzMasKlYr58RJpr57c8W7uApeLpOkAGbInExRi6GamNC2bA==
