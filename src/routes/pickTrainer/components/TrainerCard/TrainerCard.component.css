@@ -24,8 +24,14 @@
 .hoverContainer {
   display: none;
   position: absolute;
+  top: 0;
+  width: 400px;
+  height: 500px;
+  z-index: 1;
+  overflow: auto;
+  background: var(--White);
 }
 
-/* .container:hover .hoverContainer{
+.container:hover .hoverContainer {
   display: inline-block;
-} */
+}

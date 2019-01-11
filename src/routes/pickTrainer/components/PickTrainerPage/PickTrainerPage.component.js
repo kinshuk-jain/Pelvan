@@ -39,7 +39,7 @@ class PickTrainerPage extends React.Component {
           if (!isEmpty(trainerList) && trainerList.category === category) {
             return get(trainerList, 'list', []).map((trainer, i) => (
               <div className={s.gridItem}>
-                <TrainerCard key={i} data={trainer} />
+                <TrainerCard key={i} data={trainer} showReviewOnHover />
               </div>
             ));
           }
@@ -59,7 +59,7 @@ class PickTrainerPage extends React.Component {
 
   renderCarouselView(data) {
     return get(data, 'results', []).map((category, i) => (
-      <TrainerCarousel data={category} key={i} />
+      <TrainerCarousel data={category} showReviewOnHover={false} key={i} />
     ));
   }
 

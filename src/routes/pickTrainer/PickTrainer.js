@@ -79,6 +79,7 @@ class PickTrainer extends React.Component {
       // if filter is an array
       if (Array.isArray(filterName)) {
         filterName.splice(filterName.indexOf(option), 1);
+        filter[name] = filterName;
       } else {
         delete filter[name];
       }

@@ -99,3 +99,5 @@ This will generate HTML file for all routes in the app. Useful to see what each 
 ### TODOS
 
 - Add loading spinner
+- Add placeholder for loading pages
+- Add compare trainers feature

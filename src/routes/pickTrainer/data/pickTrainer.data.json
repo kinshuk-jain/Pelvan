@@ -26,8 +26,10 @@
         {
           "name": "Victoria",
           "id": "123",
-          "image": "",
-          "video": "",
+          "image":
+            "https://s3.amazonaws.com/nikeinc-vendor-assets/about/About-Landing-Movie.jpg",
+          "video":
+            "https://s3.amazonaws.com/nikeinc-vendor-assets/about/About-Landing-Movie.mp4",
           "rating": 4,
           "ratedBy": 45,
           "topReviews": [
@@ -52,8 +54,10 @@
         {
           "name": "Victoria",
           "id": "123",
-          "video": "",
-          "image": "",
+          "video":
+            "https://s3.amazonaws.com/nikeinc-vendor-assets/about/About-Landing-Movie.mp4",
+          "image":
+            "https://s3.amazonaws.com/nikeinc-vendor-assets/about/About-Landing-Movie.jpg",
           "rating": 4,
           "ratedBy": 45,
           "topReviews": [
@@ -78,8 +82,10 @@
         {
           "name": "Victoria",
           "id": "123",
-          "video": "",
-          "image": "",
+          "video":
+            "https://s3.amazonaws.com/nikeinc-vendor-assets/about/About-Landing-Movie.mp4",
+          "image":
+            "https://s3.amazonaws.com/nikeinc-vendor-assets/about/About-Landing-Movie.jpg",
           "rating": 4,
           "ratedBy": 45,
           "topReviews": [
@@ -104,8 +110,10 @@
         {
           "name": "Victoria",
           "id": "123",
-          "video": "",
-          "image": "",
+          "video":
+            "https://s3.amazonaws.com/nikeinc-vendor-assets/about/About-Landing-Movie.mp4",
+          "image":
+            "https://s3.amazonaws.com/nikeinc-vendor-assets/about/About-Landing-Movie.jpg",
           "rating": 4,
           "ratedBy": 45,
           "topReviews": [
@@ -130,8 +138,10 @@
         {
           "name": "Victoria",
           "id": "123",
-          "video": "",
-          "image": "",
+          "video":
+            "https://s3.amazonaws.com/nikeinc-vendor-assets/about/About-Landing-Movie.mp4",
+          "image":
+            "https://s3.amazonaws.com/nikeinc-vendor-assets/about/About-Landing-Movie.jpg",
           "rating": 4,
           "ratedBy": 45,
           "topReviews": [
@@ -161,8 +171,10 @@
         {
           "name": "Victoria",
           "id": "123",
-          "video": "",
-          "image": "",
+          "video":
+            "https://s3.amazonaws.com/nikeinc-vendor-assets/about/About-Landing-Movie.mp4",
+          "image":
+            "https://s3.amazonaws.com/nikeinc-vendor-assets/about/About-Landing-Movie.jpg",
           "rating": 4,
           "ratedBy": 45,
           "topReviews": [
