@@ -4,7 +4,7 @@ import withStyles from 'isomorphic-style-loader/lib/withStyles';
 import Paper from '@material-ui/core/Paper';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
-import Drawer from '@material-ui/core/Drawer';
+// import Drawer from '@material-ui/core/Drawer';
 import history from '../../../../history';
 import s from './header.component.css';
 import tinyImage from '../../../../images/tiny_gym1.jpg';
@@ -15,17 +15,17 @@ import { ProgressiveImage } from '../../../ProgressiveImage';
 const routes = ['/', '/about', '/our-trainers', '/reviews'];
 
 class HeaderComponent extends PureComponent {
-  state = {
-    showDrawer: false,
-  };
+  // state = {
+  //   showDrawer: false,
+  // };
 
   static defaultProps = {
     background: undefined,
   };
 
-  toggleDrawer = showDrawer => () => {
-    this.setState({ showDrawer });
-  };
+  // toggleDrawer = showDrawer => () => {
+  //   this.setState({ showDrawer });
+  // };
 
   handleChange = (e, i) => {
     history.push(routes[i]);
@@ -72,18 +72,18 @@ class HeaderComponent extends PureComponent {
             label="Reviews"
             classes={{ label: `${s.label}`, root: `${s.labelRoot}` }}
           />
-          <Tab
+          {/* <Tab
             label="Compare Trainers"
             onClick={this.toggleDrawer(true)}
             classes={{ label: `${s.label}`, root: `${s.labelRoot}` }}
-          />
+          /> */}
           <Tab
             label="Login"
             href="/login"
             classes={{ label: `${s.authButton}`, root: `${s.labelRoot}` }}
           />
         </Tabs>
-        <Drawer
+        {/* <Drawer
           anchor="right"
           open={this.state.showDrawer}
           onClose={this.toggleDrawer(false)}
@@ -96,7 +96,7 @@ class HeaderComponent extends PureComponent {
           >
             Hello
           </div>
-        </Drawer>
+        </Drawer> */}
       </Paper>
     );
   }
