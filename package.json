@@ -103,7 +103,7 @@
     "ramda": "0.25.0",
     "raw-loader": "0.5.1",
     "react-deep-force-update": "2.0.1",
-    "react-dev-utils": "4.1.0",
+    "react-dev-utils": "4.2.2",
     "react-error-overlay": "2.0.2",
     "react-hot-loader": "3.0.0-beta.7",
     "react-test-renderer": "16.0.0",
