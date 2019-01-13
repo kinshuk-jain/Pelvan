@@ -22,18 +22,24 @@
 }
 
 .hoverContainer {
-  display: none;
+  display: inline-block;
   position: absolute;
   top: 0;
   width: 400px;
   height: 500px;
   z-index: 1;
   overflow: auto;
-  background: var(--White);
+  box-shadow: 0 2px 2px var(--Gallery);
+  background: var(--Alabaster);
 }
 
-.container:hover .hoverContainer {
-  display: inline-block;
+.showRight {
+  left: 100%;
+  margin-left: 10px;
+}
+
+.showLeft {
+  right: 100%;
 }
 
 .starRating {

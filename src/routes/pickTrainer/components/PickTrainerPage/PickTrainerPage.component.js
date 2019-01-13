@@ -29,8 +29,9 @@ class PickTrainerPage extends React.Component {
     <select
       className={s.sortBy}
       onChange={e => this.props.sortTrainers(e.target.value)}
+      defaultValue="sortBy"
     >
-      <option value="sortBy" disabled selected>
+      <option value="sortBy" disabled>
         Sort By
       </option>
       <option value="popular">Popular</option>
@@ -52,8 +53,8 @@ class PickTrainerPage extends React.Component {
         {results.map(trainerList => {
           if (!isEmpty(trainerList) && trainerList.category === category) {
             return get(trainerList, 'list', []).map((trainer, i) => (
-              <div className={s.gridItem}>
-                <TrainerCard key={i} data={trainer} showReviewOnHover />
+              <div className={s.gridItem} key={i}>
+                <TrainerCard data={trainer} showReviewOnHover />
               </div>
             ));
           }

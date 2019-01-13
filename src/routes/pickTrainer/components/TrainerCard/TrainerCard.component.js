@@ -1,6 +1,8 @@
+/* eslint-disable no-return-assign */
 /* eslint-disable jsx-a11y/alt-text */
 /* eslint-disable jsx-a11y/media-has-caption */
 import React from 'react';
+import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import withStyles from 'isomorphic-style-loader/lib/withStyles';
 import isEmpty from 'lodash/isEmpty';
@@ -14,7 +16,7 @@ import { ProgressiveImage } from '../../../../components/ProgressiveImage';
 
 import s from './TrainerCard.component.css';
 
-// TODO: Replace trainerImg with data.image
+// TODO: Replace trainerImg with data.image and add trainer tinyImage
 
 // eslint-disable-next-line react/prop-types
 const RenderStar = ({ rating, starSize = '20px' }) => (
@@ -46,38 +48,90 @@ const UserReview = ({ data }) => (
   </div>
 );
 
-const TrainerCard = ({ data = {}, showReviewOnHover = false }) => (
-  <div className={s.container}>
-    <ProgressiveImage
-      className={s.image}
-      tinyImage={tinyTrainerImg}
-      src={trainerImg}
-      alt={data.name}
-      title={data.name}
-    />
-    <span className={s.name}>{data.name}</span>
-    <div className={s.starRating}>
-      <RenderStar rating={data.rating} />
-      <span className={s.ratedBy}>({data.ratedBy})</span>
-    </div>
-    {showReviewOnHover &&
-      (data.video || !isEmpty(data.topReviews)) && (
-        <div className={s.hoverContainer}>
-          <video autoPlay muted loop className={s.video} poster={data.image}>
-            <source src={data.video} type="video/mp4" />
-            <img
-              src={data.image}
-              alt="Video not supported"
-              title="Your browser does not support HTML5 video"
-            />
-          </video>
-          {get(data, 'topReviews', []).map((review, i) => (
-            <UserReview data={review} key={i} />
-          ))}
+class TrainerCard extends React.Component {
+  state = {
+    showHover: false,
+    pos: 'top',
+  };
+
+  timeout = null;
+
+  handlerMouseOver = () => {
+    const { x, width } = this.el.getBoundingClientRect();
+    const diff = window.innerWidth - (x + width);
+    let { pos } = this.state;
+    if (diff > 410) {
+      pos = 'right';
+    } else if (x > 410) {
+      pos = 'left';
+    } else {
+      pos = 'top';
+    }
+    this.timeout = setTimeout(
+      () => this.setState({ showHover: true, pos }),
+      500,
+    );
+  };
+
+  handleMouseLeave = () => {
+    clearTimeout(this.timeout);
+    this.setState({ showHover: false });
+  };
+
+  render() {
+    const { data = {}, showReviewOnHover = false } = this.props;
+    const { showHover, pos } = this.state;
+    return (
+      <div
+        className={s.container}
+        ref={el => (this.el = el)}
+        onMouseOver={showReviewOnHover ? this.handlerMouseOver : () => {}}
+        onMouseLeave={showReviewOnHover ? this.handleMouseLeave : () => {}}
+      >
+        <ProgressiveImage
+          className={s.image}
+          tinyImage={tinyTrainerImg}
+          src={trainerImg}
+          alt={data.name}
+          title={data.name}
+        />
+        <span className={s.name}>{data.name}</span>
+        <div className={s.starRating}>
+          <RenderStar rating={data.rating} />
+          <span className={s.ratedBy}>({data.ratedBy})</span>
         </div>
-      )}
-  </div>
-);
+        {showReviewOnHover &&
+          showHover &&
+          (data.video || !isEmpty(data.topReviews)) && (
+            <div
+              className={classNames(s.hoverContainer, {
+                [s.showRight]: pos === 'right',
+                [s.showLeft]: pos === 'left',
+              })}
+            >
+              <video
+                autoPlay
+                muted
+                loop
+                className={s.video}
+                poster={data.image}
+              >
+                <source src={data.video} type="video/mp4" />
+                <img
+                  src={data.image}
+                  alt="Video not supported"
+                  title="Your browser does not support HTML5 video"
+                />
+              </video>
+              {get(data, 'topReviews', []).map((review, i) => (
+                <UserReview data={review} key={i} />
+              ))}
+            </div>
+          )}
+      </div>
+    );
+  }
+}
 
 TrainerCard.propTypes = {
   data: PropTypes.object.isRequired,
