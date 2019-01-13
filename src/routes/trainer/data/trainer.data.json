@@ -1,0 +1,15 @@
+{
+  "profile": {
+    "name": "Victoria"
+  },
+  "experience": {
+    "abc": "abc"
+  },
+  "skills": ["kickboxing", "kickboxing", "kickboxing", "kickboxing"],
+  "contact": {
+    "text": "Contact this trainer by"
+  },
+  "reviews": {
+    "abc": "abc"
+  }
+}

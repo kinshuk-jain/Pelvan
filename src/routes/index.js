@@ -26,6 +26,10 @@ const routes = {
       path: '/our-trainers',
       load: () => import(/* webpackChunkName: 'pickTrainer' */ './pickTrainer'),
     },
+    {
+      path: '/trainer/:trainerId',
+      load: () => import(/* webpackChunkName: 'trainer' */ './trainer'),
+    },
     // Wildcard routes, e.g. { path: '(.*)', ... } (must go last)
     {
       path: '(.*)',

@@ -53,7 +53,7 @@
 }
 
 .authButton {
-  color: #fff;
+  color: var(--White);
   background: var(--Jade);
   padding: 5px 15px;
   border-radius: 5px;
