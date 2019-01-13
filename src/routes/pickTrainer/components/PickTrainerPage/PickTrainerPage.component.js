@@ -47,7 +47,7 @@ class PickTrainerPage extends React.Component {
     return (
       <div className={s.grid}>
         <div className={s.gridHeader}>
-          {category}
+          Our Trainers, Your selection
           <span>{!isEmpty(filter) ? this.renderSortBy() : null}</span>
         </div>
         {results.map(trainerList => {
