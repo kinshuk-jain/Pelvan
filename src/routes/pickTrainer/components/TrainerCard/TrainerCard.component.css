@@ -35,3 +35,43 @@
 .container:hover .hoverContainer {
   display: inline-block;
 }
+
+.starRating {
+  text-align: center;
+}
+
+.userReviewContainer {
+  padding: 10px;
+}
+
+.reviewDate {
+  font-size: 12px;
+  font-weight: 500;
+  margin: 8px 0;
+}
+
+.reviewTitle {
+  font-weight: 500;
+  margin-left: 5px;
+  display: inline-block;
+  width: 75%;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  vertical-align: top;
+}
+
+.userThumbnail {
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  margin-right: 10px;
+}
+
+.ratedBy {
+  position: relative;
+  font-size: 12px;
+  color: var(--Boulder);
+  top: 2px;
+  margin-left: 5px;
+}

@@ -1,3 +1,4 @@
+/* eslint-disable default-case */
 /* eslint-disable react/no-did-mount-set-state */
 /* eslint-disable no-restricted-globals */
 /* eslint-disable no-return-assign */
@@ -8,7 +9,9 @@ import mockData from './data/pickTrainer.data.json';
 import { addRemoveScrollEventListener } from '../../core/utils';
 import { PickTrainerPage } from './components';
 
-// TODO: TrainerCard component
+// TODO: Peformance of infinite scroll will deteriorate if there are a lot of elements on the page. If user is scrolling down a lot, remove older
+// elements i.e. keep max amount of TrainerCards that can be shown on the page fixed irrespective of how much users scrolls. If more elements
+// delete older elements when fetching new ones.
 
 const INFINITE_SCROLL_OFFSET = 200;
 
@@ -37,6 +40,18 @@ class PickTrainer extends React.Component {
     }
   }, 200);
 
+  // TODO: apply sort function
+  sortTrainers = option => {
+    switch (option) {
+      case 'popular':
+        break;
+      case 'rating':
+        break;
+      case 'reviews':
+        break;
+    }
+  };
+
   componentDidMount() {
     const qs = parse(location.search);
     const { data } = this.state;
@@ -62,6 +77,10 @@ class PickTrainer extends React.Component {
     addRemoveScrollEventListener(this.scrollListener, true);
   }
 
+  urlUpdate = filter => {
+    history.pushState(filter, 'our-trainers', `?${stringify(filter)}`);
+  };
+
   onFilterUpdate = (name, option, removeFilter = false) => {
     const { filter } = this.state;
     const filterName = filter[name];
@@ -86,7 +105,7 @@ class PickTrainer extends React.Component {
     }
 
     // change query string in url
-    history.pushState(filter, 'our-trainers', `?${stringify(filter)}`);
+    this.urlUpdate(filter);
 
     // TODO: fetch data with new filters
     this.setState({
@@ -100,6 +119,7 @@ class PickTrainer extends React.Component {
       <PickTrainerPage
         data={data}
         filter={filter}
+        sortTrainers={this.sortTrainers}
         onFilterUpdate={this.onFilterUpdate}
         refToTrainerContainer={el => (this.refToTrainerContainer = el)}
       />

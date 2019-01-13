@@ -43,6 +43,27 @@
   display: inline-block;
 }
 
+.gridHeader {
+  height: 50px;
+  line-height: 50px;
+  position: sticky;
+  background: var(--White);
+  top: 0;
+  z-index: 1;
+}
+
+.gridHeader span {
+  position: absolute;
+  right: 20px;
+}
+
+.sortBy {
+  outline: none;
+  color: var(--Trout);
+  border: 1px solid var(--Gallery);
+  font-size: 14px;
+}
+
 @media screen and (max-width: 1024px) {
   .filterContainer {
     display: none;

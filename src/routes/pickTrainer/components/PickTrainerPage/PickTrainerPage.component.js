@@ -25,15 +25,29 @@ class PickTrainerPage extends React.Component {
     stickyTop: 0,
   };
 
+  renderSortBy = () => (
+    <select
+      className={s.sortBy}
+      onChange={e => this.props.sortTrainers(e.target.value)}
+    >
+      <option value="sortBy" disabled selected>
+        Sort By
+      </option>
+      <option value="popular">Popular</option>
+      <option value="rating">Rating</option>
+      <option value="reviews">Reviews</option>
+    </select>
+  );
+
   renderGridView(data) {
     const { filter } = this.props;
     const results = get(data, 'results', []);
     const category = get(results[0], 'category', '');
     return (
       <div className={s.grid}>
-        <div>
+        <div className={s.gridHeader}>
           {category}
-          {!isEmpty(filter) && 'Sort By'}
+          <span>{!isEmpty(filter) ? this.renderSortBy() : null}</span>
         </div>
         {results.map(trainerList => {
           if (!isEmpty(trainerList) && trainerList.category === category) {
@@ -106,6 +120,7 @@ PickTrainerPage.propTypes = {
   filter: PropTypes.object.isRequired,
   refToTrainerContainer: PropTypes.func,
   onFilterUpdate: PropTypes.func.isRequired,
+  sortTrainers: PropTypes.func.isRequired,
 };
 
 PickTrainerPage.defaultProps = {
