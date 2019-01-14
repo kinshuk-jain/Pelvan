@@ -32,7 +32,19 @@
       "achievement": "dfadf adfa dasfdas"
     }
   ],
-  "skills": ["kickboxing", "kickboxing", "kickboxing", "kickboxing"],
+  "skills": [
+    "kickboxing",
+    "kickboxing",
+    "kickboxing",
+    "kickboxing",
+    "kickboxing",
+    "kickboxing",
+    "kickboxing",
+    "kickboxing",
+    "kickboxing",
+    "kickboxing",
+    "kickboxing"
+  ],
   "contact": {
     "text": "Contact this trainer by"
   },

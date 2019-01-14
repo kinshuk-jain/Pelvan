@@ -4,11 +4,11 @@
   position: fixed;
   top: 0;
   width: 100%;
+  z-index: 2;
   height: 74px;
   padding: 0 4%;
   background: var(--Astronaut);
   min-width: var(--max-content-width);
-  transform: translateZ(0);
   transition: all 0.5s ease-in-out;
 }
 
