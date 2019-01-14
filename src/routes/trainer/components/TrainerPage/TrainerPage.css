@@ -2,9 +2,10 @@
 
 .container {
   position: relative;
+  top: 74px;
   width: 60%;
   min-width: var(--max-content-width);
-  margin: 50px auto;
+  margin: 40px auto;
 }
 
 .card {
