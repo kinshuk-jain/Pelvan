@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-// import Proptypes from 'prop-types';
+import Proptypes from 'prop-types';
+import classNames from 'classnames';
+import { connect } from 'react-redux';
 import withStyles from 'isomorphic-style-loader/lib/withStyles';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
@@ -10,8 +12,9 @@ import { SearchBar } from '../../../SearchBar';
 
 class Header extends Component {
   render() {
+    const { hideTopBar } = this.props;
     return (
-      <div className={s.header}>
+      <div className={classNames(s.header, { [s.withTopBar]: !hideTopBar })}>
         <Link className={s.logoInfo} target="_self" to="/">
           Pelvan
         </Link>
@@ -19,6 +22,7 @@ class Header extends Component {
           <SearchBar />
         </div>
         <Tabs
+          value={0}
           classes={{ root: `${s.tabContainer}` }}
           indicatorColor="primary"
           textColor="primary"
@@ -26,23 +30,27 @@ class Header extends Component {
         >
           <Tab
             label="Home"
+            icon={<i className="icon-home3" />}
             disableRipple
             disableTouchRipple
             classes={{ label: `${s.label}`, root: `${s.labelRoot}` }}
           />
           <Tab
+            icon={<i className="icon-users" />}
             disableRipple
             disableTouchRipple
             label="About Us"
             classes={{ label: `${s.label}`, root: `${s.labelRoot}` }}
           />
           <Tab
+            icon={<i className="icon-accessibility" />}
             label="Our Trainers"
             disableRipple
             disableTouchRipple
             classes={{ label: `${s.label}`, root: `${s.labelRoot}` }}
           />
           <Tab
+            icon={<i className="icon-rate_review" />}
             label="Reviews"
             disableRipple
             disableTouchRipple
@@ -61,4 +69,12 @@ class Header extends Component {
   }
 }
 
-export default withStyles(s)(Header);
+Header.propTypes = {
+  hideTopBar: Proptypes.bool.isRequired,
+};
+
+const mapStateToProps = ({ hideTopBar }) => ({
+  hideTopBar,
+});
+
+export default withStyles(s)(connect(mapStateToProps, null)(Header));

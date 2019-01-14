@@ -11,4 +11,27 @@
 .card {
   width: 100%;
   margin-top: 30px;
+  background: var(--White);
+}
+
+.showAllReviews {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--Lochmara);
+  cursor: pointer;
+}
+
+.showMore {
+  font-weight: 500;
+  color: var(--Lochmara);
+  font-size: 14px;
+  text-align: center;
+  width: 100%;
+  cursor: pointer !important;
+  margin-top: 15px;
+}
+
+.skillWrapper {
+  display: inline-block;
+  width: 50%;
 }

@@ -1,15 +1,60 @@
 {
   "profile": {
-    "name": "Victoria"
+    "name": "Victoria",
+    "ratedBy": 45,
+    "rating": 4.3
   },
-  "experience": {
-    "abc": "abc"
-  },
+  "experience": [
+    {
+      "title": "ABC",
+      "company": "abc",
+      "achivement": "abc",
+      "time": "123 - 456"
+    },
+    {
+      "title": "ABC",
+      "company": "abc",
+      "achivement": "abc",
+      "time": "123 - 456"
+    },
+    {
+      "title": "ABC",
+      "company": "abc",
+      "achivement": "abc",
+      "time": "123 - 456"
+    }
+  ],
+  "education": [
+    {
+      "school": "abc",
+      "course": "anc",
+      "year": "2008 - 2012",
+      "achievement": "dfadf adfa dasfdas"
+    }
+  ],
   "skills": ["kickboxing", "kickboxing", "kickboxing", "kickboxing"],
   "contact": {
     "text": "Contact this trainer by"
   },
-  "reviews": {
-    "abc": "abc"
-  }
+  "reviews": [
+    {
+      "rating": 3,
+      "name": "Johny Lobson",
+      "timestamp": "2019-01-11T14:09:58.597Z",
+      "thumbnail":
+        "http://collectivebehaviour.com/wp-content/uploads/2015/11/Iain-photo-by-Gabriel-Miller.jpg",
+      "title": "Very good",
+      "comment": "I used her services"
+    },
+    {
+      "rating": 3,
+      "name": "Johny Lobson",
+      "timestamp": "2019-01-11T14:09:58.597Z",
+      "thumbnail":
+        "http://collectivebehaviour.com/wp-content/uploads/2015/11/Iain-photo-by-Gabriel-Miller.jpg",
+      "title": "Very good",
+      "comment": "I used her services"
+    }
+  ],
+  "numReviews": 15
 }

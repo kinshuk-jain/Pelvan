@@ -1,7 +1,8 @@
 @import '../../../variables.css';
 
 .header {
-  position: relative;
+  position: fixed;
+  top: 0;
   width: 100%;
   height: 74px;
   padding: 0 4%;
@@ -9,6 +10,10 @@
   min-width: var(--max-content-width);
   transform: translateZ(0);
   transition: all 0.5s ease-in-out;
+}
+
+.withTopBar {
+  top: 32px;
 }
 
 .logoInfo {
@@ -53,7 +58,8 @@
   margin-left: 35px;
 }
 
-.labelRoot:hover .label {
+.labelRoot:hover .label,
+.labelRoot:hover i {
   color: var(--White);
 }
 
@@ -66,6 +72,10 @@
 
 .authButton:hover {
   color: var(--White);
+}
+
+i {
+  color: var(--Silver);
 }
 
 @media (max-width: 1248px) {

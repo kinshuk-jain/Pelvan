@@ -3,94 +3,21 @@
 :global {
   [class^="icon-"], [class*=" icon-"] {
     /* use !important to prevent issues with browser extensions that change fonts */
-    font-family: 'kyc' !important;
+    font-family: 'pelvan' !important;
     speak: none;
     font-style: normal;
     font-weight: normal;
     font-variant: normal;
     text-transform: none;
     line-height: 1;
-  
+
     /* Better Font Rendering =========== */
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
-  
-  .icon-kyc .path1:before {
-    content: "\e90e";
-    color: rgb(0, 0, 0);
-  }
 
-  .icon-kyc .path2:before {
-    content: "\e90f";
-    margin-left: -2.88671875em;
-    color: rgb(0, 0, 0);
-  }
-
-  .icon-kyc .path3:before {
-    content: "\e910";
-    margin-left: -2.88671875em;
-    color: rgb(0, 0, 0);
-  }
-
-  .icon-kyc .path4:before {
-    content: "\e911";
-    margin-left: -2.88671875em;
-    color: rgb(0, 0, 0);
-  }
-
-  .icon-kyc .path5:before {
-    content: "\e912";
-    margin-left: -2.88671875em;
-    color: rgb(69, 180, 227);
-  }
-
-  .icon-kyc .path6:before {
-    content: "\e913";
-    margin-left: -2.88671875em;
-    color: rgb(69, 180, 227);
-  }
-
-  .icon-kyc .path7:before {
-    content: "\e914";
-    margin-left: -2.88671875em;
-    color: rgb(69, 180, 227);
-  }
-
-  .icon-kyc .path8:before {
-    content: "\e915";
-    margin-left: -2.88671875em;
-    color: rgb(91, 91, 91);
-  }
-
-  .icon-kyc .path9:before {
-    content: "\e916";
-    margin-left: -2.88671875em;
-    color: rgb(91, 91, 91);
-  }
-
-  .icon-kyc .path10:before {
-    content: "\e917";
-    margin-left: -2.88671875em;
-    color: rgb(91, 91, 91);
-  }
-
-  .icon-kyc .path11:before {
-    content: "\e918";
-    margin-left: -2.88671875em;
-    color: rgb(91, 91, 91);
-  }
-
-  .icon-kyc .path12:before {
-    content: "\e919";
-    margin-left: -2.88671875em;
-    color: rgb(91, 91, 91);
-  }
-
-  .icon-kyc .path13:before {
-    content: "\e91a";
-    margin-left: -2.88671875em;
-    color: rgb(194, 14, 57);
+  .icon-rate_review:before {
+    content: "\e900";
   }
 
   .icon-bars:before {
@@ -109,48 +36,16 @@
     content: "\6d";
   }
 
-  .icon-flag:before {
-    content: "\e902";
+  .icon-facebook-official:before {
+    content: "\e901";
   }
 
-  .icon-LTC-alt:before {
+  .icon-twitter-square:before {
     content: "\e903";
   }
 
   .icon-search:before {
     content: "\e904";
-  }
-
-  .icon-BCH-alt:before {
-    content: "\e905";
-  }
-
-  .icon-BTC-alt:before {
-    content: "\e906";
-  }
-
-  .icon-BTCD-alt:before {
-    content: "\e907";
-  }
-
-  .icon-DASH-alt:before {
-    content: "\e908";
-  }
-
-  .icon-ETC:before {
-    content: "\e909";
-  }
-
-  .icon-GLD:before {
-    content: "\e90a";
-  }
-
-  .icon-OMG:before {
-    content: "\e90b";
-  }
-
-  .icon-XRP-alt:before {
-    content: "\e90c";
   }
 
   .icon-image:before {
@@ -167,18 +62,6 @@
 
   .icon-mail:before {
     content: "\f03b";
-  }
-
-  .icon-arrow-up:before {
-    content: "\f03d";
-  }
-
-  .icon-arrow-down:before {
-    content: "\f03f";
-  }
-
-  .icon-pin:before {
-    content: "\f041";
   }
 
   .icon-remove_sign:before {
@@ -225,11 +108,15 @@
     content: "\f142";
   }
 
-  .icon-twitter-square:before {
-    content: "\e901";
+  .icon-home3:before {
+    content: "\e902";
   }
 
-  .icon-facebook-official:before {
-    content: "\e900";
-  }  
+  .icon-users:before {
+    content: "\e972";
+  }
+
+  .icon-accessibility:before {
+    content: "\e9b2";
+  }
 }

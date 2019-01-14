@@ -1,12 +1,11 @@
 @font-face {
-  font-family: 'kyc';
+  font-family: 'pelvan';
   font-display: 'auto';
-  src: url('fonts/kyc.woff?iod2cs');
-  src:
-    url('fonts/kyc.eot?iod2cs#iefix') format('embedded-opentype'),
-    url('fonts/kyc.ttf?iod2cs') format('truetype'),
-    url('fonts/kyc.woff?iod2cs') format('woff'),
-    url('fonts/kyc.svg?iod2cs#kyc') format('svg');
+  src:  url('fonts/pelvan.woff?qmw98v');
+  src:  url('fonts/pelvan.eot?qmw98v#iefix') format('embedded-opentype'),
+    url('fonts/pelvan.ttf?qmw98v') format('truetype'),
+    url('fonts/pelvan.woff?qmw98v') format('woff'),
+    url('fonts/pelvan.svg?qmw98v#pelvan') format('svg');
   font-weight: normal;
   font-style: normal;
 }
