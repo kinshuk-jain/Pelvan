@@ -79,6 +79,41 @@ class TrainerPage extends React.Component {
     );
   };
 
+  renderExp = () => {
+    const { data = {} } = this.props;
+    const { experience = [], education = [] } = data;
+
+    return (
+      <Card className={s.card}>
+        <CardHeader title="Experience" />
+        <CardContent>
+          {experience.map((exp, i) => (
+            <React.Fragment key={i}>
+              <div className={s.title}>{exp.title}</div>
+              <div className={s.school}>{exp.company}</div>
+              <div className={s.year}>{exp.time}</div>
+              <div className={s.achievement}>{exp.achievement}</div>
+              {experience.length !== i + 1 && <Divider variant="middle" />}
+            </React.Fragment>
+          ))}
+        </CardContent>
+        <Divider />
+        <CardHeader title="Education" />
+        <CardContent>
+          {education.map((edu, i) => (
+            <React.Fragment key={i}>
+              <div className={s.title}>{edu.school}</div>
+              <div className={s.school}>{edu.school}</div>
+              <div className={s.year}>{edu.year}</div>
+              <div className={s.achievement}>{edu.achievement}</div>
+              {education.length !== i + 1 && <Divider variant="middle" />}
+            </React.Fragment>
+          ))}
+        </CardContent>
+      </Card>
+    );
+  };
+
   render() {
     const { data = {} } = this.props;
     return (
@@ -86,22 +121,12 @@ class TrainerPage extends React.Component {
         <FixedHeader />
         <div className={s.container}>
           <Card className={s.card}>
-            <CardContent>Profile: {JSON.stringify(data.profile)}</CardContent>
-          </Card>
-          <Card className={s.card}>
-            <CardContent>Contact: {JSON.stringify(data.contact)}</CardContent>
-          </Card>
-          <Card className={s.card}>
-            <CardHeader title="Experience" />
             <CardContent>
-              Experience: {JSON.stringify(data.experience)}
-            </CardContent>
-            <Divider />
-            <CardHeader title="Education" />
-            <CardContent>
-              Education: {JSON.stringify(data.education)}
+              Profile: {JSON.stringify(data.profile)}
+              Contact: {JSON.stringify(data.contact)}
             </CardContent>
           </Card>
+          {this.renderExp()}
           {this.renderSkills()}
           {this.renderReviews()}
         </div>

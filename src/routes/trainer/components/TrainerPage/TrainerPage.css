@@ -6,6 +6,7 @@
   width: 60%;
   min-width: var(--max-content-width);
   margin: 40px auto;
+  margin-bottom: 100px;
 }
 
 .card {
@@ -34,4 +35,25 @@
 .skillWrapper {
   display: inline-block;
   width: 50%;
+}
+
+.title {
+  font-weight: 500;
+  padding: 10px 20px;
+}
+
+.year {
+  font-size: 12px;
+  padding: 5px 20px;
+  color: var(--Silver);
+}
+
+.achievement {
+  font-style: italic;
+  color: var(--MineShaft);
+  padding: 5px 20px;
+}
+
+.school {
+  padding: 5px 20px;
 }

@@ -78,7 +78,7 @@ i {
   color: var(--Silver);
 }
 
-@media (max-width: 1248px) {
+@media (max-width: 1024px) {
   .labelRoot {
     margin-left: 15px;
   }
