@@ -12,3 +12,9 @@ automatic_scaling:
   cool_down_period_sec: 180
   cpu_utilization:
     target_utilization: 0.6
+default_expiration: '1y'
+handlers:
+- url: /.*
+  secure: always
+  redirect_http_response_code: 301
+  script: auto
