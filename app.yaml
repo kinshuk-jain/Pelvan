@@ -1,0 +1,14 @@
+# used by gcloud
+runtime: nodejs
+env: flex
+service: Pelvan
+resources:
+  cpu: 2
+  memory_gb: 2.3
+  disk_size_gb: 10
+automatic_scaling:
+  min_num_instances: 2
+  max_num_instances: 15
+  cool_down_period_sec: 180
+  cpu_utilization:
+    target_utilization: 0.6
