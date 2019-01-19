@@ -24,6 +24,7 @@
     "pretty-error": "2.1.1",
     "prop-types": "15.5.10",
     "query-string": "5.0.0",
+    "ramda": "0.25.0",
     "react": "16.4.2",
     "react-dom": "16.4.2",
     "react-light-carousel": "1.2.1",
